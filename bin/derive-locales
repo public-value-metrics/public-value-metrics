@@ -1,0 +1,92 @@
+#!/bin/sh
+# Derive en-gb, en-001, en-us from the canonical en-gb-oxendict content, and cy-001 from cy-gb.
+# Run from the repo root after writing/editing any locales/en-gb-oxendict/topics/*/index.md
+# or locales/cy-gb/topics/*/index.md file.
+#
+# Uses perl (not sed) for the text transforms: BSD sed on macOS does not support \b word
+# boundaries in extended-regex mode, so a sed-based version of this script silently makes no
+# substitutions at all. Do not "simplify" this back to sed without testing on macOS first.
+set -eu
+
+top="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+cd "$top"
+
+# en-gb-oxendict -> en-us: British vocabulary swapped to American; -ize spelling unchanged.
+to_en_us() {
+  perl -pe '
+    s/\bmaths\b/math/g;               s/\bMaths\b/Math/g;
+    s/\blicence\b/license/g;          s/\bLicence\b/License/g;          s/\blicences\b/licenses/g; s/\bLicences\b/Licenses/g;
+    s/\bmodelled\b/modeled/g;         s/\bModelled\b/Modeled/g;         s/\bmodelling\b/modeling/g; s/\bModelling\b/Modeling/g;
+    s/\blabour\b/labor/g;             s/\bLabour\b/Labor/g;             s/\blabours\b/labors/g;
+    s/\banalogue\b/analog/g;          s/\bAnalogue\b/Analog/g;          s/\banalogues\b/analogs/g;
+    s/\bprogramme\b/program/g;        s/\bProgramme\b/Program/g;        s/\bprogrammes\b/programs/g; s/\bProgrammes\b/Programs/g;
+    s/\bcentre\b/center/g;            s/\bCentre\b/Center/g;            s/\bcentres\b/centers/g;     s/\bCentres\b/Centers/g;
+    s/\bdefence\b/defense/g;          s/\bDefence\b/Defense/g;
+    s/\btravelled\b/traveled/g;       s/\btravelling\b/traveling/g;
+    s/\bcolour\b/color/g;             s/\bColour\b/Color/g;
+    s/\bfavour\b/favor/g;             s/\bFavour\b/Favor/g;
+    s/\bcatalogue\b/catalog/g;        s/\bCatalogue\b/Catalog/g;
+  '
+}
+
+# en-gb-oxendict -> en-gb / en-001: -ize/-ization family swapped to -ise/-isation; vocabulary unchanged.
+# Each root below sits immediately before "iz" in the -ize/-ise alternation (organ+ize,
+# minim+ize, priorit+ize, ...), so a plain root+iz -> root+is swap is safe and covers every
+# inflection (-ize, -izes, -ized, -izing, -ization, -izations) without enumerating each one.
+# Roots must NOT include the vowel already adjacent to "iz" (e.g. "organ" not "organi") or the
+# match requires a doubled letter that never occurs and silently matches nothing.
+to_ise() {
+  perl -pe '
+    for my $r (qw(organ minim maxim optim real recogn standard custom priorit monet civil
+                   visual mobil util categor summar special character emphas legitim general
+                   local stabil global author scrutin popular institutional operational final
+                   material)) {
+      s/($r)iz/$1is/gi;
+    }
+    s/\banalyze\b/analyse/g;   s/\bAnalyze\b/Analyse/g;
+    s/\banalyzed\b/analysed/g; s/\bAnalyzed\b/Analysed/g;
+    s/\banalyzes\b/analyses/g; s/\bAnalyzes\b/Analyses/g;
+    s/\banalyzing\b/analysing/g; s/\bAnalyzing\b/Analysing/g;
+  '
+}
+
+count=0
+for oxendict_dir in locales/en-gb-oxendict/topics/*/; do
+  slug=$(basename "$oxendict_dir")
+  src="$oxendict_dir/index.md"
+  [ -f "$src" ] || continue
+
+  ise_slug=$(printf '%s' "$slug" | perl -pe 's/ization/isation/g; s/ize([a-z]*)$/ise$1/')
+
+  mkdir -p "locales/en-us/topics/$slug"
+  to_en_us < "$src" > "locales/en-us/topics/$slug/index.md"
+
+  for loc in en-gb en-001; do
+    dst_dir="locales/$loc/topics/$ise_slug"
+    mkdir -p "$dst_dir"
+    to_ise < "$src" > "$dst_dir/index.md"
+  done
+
+  count=$((count + 1))
+done
+echo "Derived en-us, en-gb, en-001 for $count topics."
+
+count=0
+for cygb_dir in locales/cy-gb/topics/*/; do
+  slug=$(basename "$cygb_dir")
+  src="$cygb_dir/index.md"
+  [ -f "$src" ] || continue
+  dst_dir="locales/cy-001/topics/$slug"
+  mkdir -p "$dst_dir"
+  cp "$src" "$dst_dir/index.md"
+  count=$((count + 1))
+done
+echo "Derived cy-001 (copy of cy-gb) for $count topics."
+
+# (Re)create README.md symlinks everywhere index.md exists.
+for dir in $(find locales -type d -mindepth 3); do
+  if [ -f "$dir/index.md" ] && [ ! -e "$dir/README.md" ]; then
+    ln -s index.md "$dir/README.md"
+  fi
+done
+echo "README.md symlinks ensured."
