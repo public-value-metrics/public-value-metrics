@@ -41,7 +41,7 @@ CFR                 30%         10%
 MTTR                3 days      4 hours
 ```
 
-The team ships around 25 improvements/year, average value £8,000/week ([cost of delay](../cost-of-delay-in-public-programs/)). Cutting lead time by roughly 7.3 weeks pulls each improvement's benefit stream forward: 25 × 7.3 × 8,000 ≈ **£1,460,000/year** of value delivered sooner. On failure rate: 25 × (0.30 − 0.10) = 5 fewer failed changes/year; each failed change on a public portal typically redirects an estimated 2,000 citizens to the phone channel at £8.62 versus 20p, a net cost of roughly £8.42 × 2,000 ≈ £16,840 per incident, so avoiding 5 incidents saves ≈ **£84,200/year**. The delivery-engineering investment is valued in the same currency as any other public-value case.
+The team ships around 25 improvements/year, average value £8,000/week ([cost of delay](../cost-of-delay-in-public-programmes/)). Cutting lead time by roughly 7.3 weeks pulls each improvement's benefit stream forward: 25 × 7.3 × 8,000 ≈ **£1,460,000/year** of value delivered sooner. On failure rate: 25 × (0.30 − 0.10) = 5 fewer failed changes/year; each failed change on a public portal typically redirects an estimated 2,000 citizens to the phone channel at £8.62 versus 20p, a net cost of roughly £8.42 × 2,000 ≈ £16,840 per incident, so avoiding 5 incidents saves ≈ **£84,200/year**. The delivery-engineering investment is valued in the same currency as any other public-value case.
 
 ## Worked example continued: reliability
 

@@ -75,7 +75,7 @@ New here? Start with [public value](locales/en-gb-oxendict/topics/public-value/)
 - [GDP alternatives](locales/en-gb-oxendict/topics/gdp-alternatives/) — The Genuine Progress Indicator, Gross National Happiness, and GDP's well-known blind spots
 - [Human Development Index (HDI)](locales/en-gb-oxendict/topics/human-development-index/) — Life expectancy, education, and income combined into one number — and what it flattens
 - [Multidimensional Poverty Index (MPI)](locales/en-gb-oxendict/topics/multidimensional-poverty-index/) — Counting deprivations, not just income, across health, education, and living standards
-- [Wellbeing-adjusted life years (WELBY)](locales/en-gb-oxendict/topics/wellbeing-adjusted-life-years/) — The WELBY: a QALY-shaped unit for policies whose currency is life satisfaction, not health
+- [Wellbeing-adjusted life years (WELLBY)](locales/en-gb-oxendict/topics/wellbeing-adjusted-life-years/) — The WELLBY: a QALY-shaped unit for policies whose currency is life satisfaction, not health
 - [Index of Multiple Deprivation (IMD)](locales/en-gb-oxendict/topics/index-of-multiple-deprivation/) — England's small-area deprivation ranking, and how it routes funding and attention
 - [Social capital metrics](locales/en-gb-oxendict/topics/social-capital-metrics/) — Trust, networks, and civic participation as an economic asset with no ledger entry
 - [Natural capital accounting](locales/en-gb-oxendict/topics/natural-capital-accounting/) — Putting the environment on the balance sheet, from the UK's 25 Year Environment Plan onward
@@ -94,7 +94,7 @@ New here? Start with [public value](locales/en-gb-oxendict/topics/public-value/)
 
 ## Locales
 
-This book is maintained in six locales, tracked across directories with a [`.locale-peer-id`](https://github.com/SixArm/locale-help) file so translations of the same topic can be found regardless of slug spelling:
+This book is maintained in sixteen locales, tracked across directories with a [`.locale-peer-id`](https://github.com/SixArm/locale-help) file so translations of the same topic can be found regardless of slug spelling. Every non-canonical locale keeps the *English* (`en-gb-oxendict`) slug for its topic directories — only the content is translated, never the directory name:
 
 - `en-gb-oxendict` — English (Great Britain, Oxford spelling) — the canonical locale this README links into
 - `en-001` — English (World)
@@ -102,6 +102,16 @@ This book is maintained in six locales, tracked across directories with a [`.loc
 - `en-gb` — English (Great Britain)
 - `cy-gb` — Cymraeg (Great Britain)
 - `cy-001` — Cymraeg (World)
+- `zh-001` — Chinese (World)
+- `hi-001` — Hindi (World)
+- `ar-001` — Arabic (World)
+- `es-001` — Spanish (World)
+- `fr-001` — French (World)
+- `ru-001` — Russian (World)
+- `bn-001` — Bengali (World)
+- `pt-001` — Portuguese (World)
+- `id-001` — Indonesian (World)
+- `ur-001` — Urdu (World)
 
 See [locale-help](https://github.com/SixArm/locale-help) for the conventions this repo follows: locale directory naming, slug format, and the `.locale-peer-id` cross-locale tracking file.
 
@@ -113,5 +123,5 @@ Many quoted figures refresh regularly (Green Book discount rates, IMD releases, 
 
 This repo ships two [Claude Skills](https://code.claude.com/docs/en/skills) — drop either into a project's `.claude/skills/` (or point Claude at this repo's `skills/`) to put this book to work directly inside an agentic coding session:
 
-- [public-value-metrics-skill](skills/public-value-metrics-skill/SKILL.md) — for general use: explain a concept, compute a metric from your own numbers, or assemble a multi-metric business case, grounded in this book's formulas, worked examples, and pitfalls rather than generic recall.
-- [public-value-metrics-maintainer-skill](skills/public-value-metrics-maintainer-skill/SKILL.md) — for maintainers of this repo: the per-topic template, README indexing conventions, locale conventions, and a link/sync validation checklist for adding or editing topics.
+- [public-value-metrics-skill](https://github.com/public-value-metrics/public-value-metrics/blob/main/skills/public-value-metrics-skill/SKILL.md) — for general use: explain a concept, compute a metric from your own numbers, or assemble a multi-metric business case, grounded in this book's formulas, worked examples, and pitfalls rather than generic recall.
+- [public-value-metrics-maintainer-skill](https://github.com/public-value-metrics/public-value-metrics/blob/main/skills/public-value-metrics-maintainer-skill/SKILL.md) — for maintainers of this repo: the per-topic template, README indexing conventions, locale conventions, and a link/sync validation checklist for adding or editing topics.

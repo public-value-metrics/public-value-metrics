@@ -21,7 +21,17 @@ test_locales() {
         en-gb \
         en-gb-oxendict \
         cy-001 \
-        cy-gb
+        cy-gb \
+        zh-001 \
+        hi-001 \
+        ar-001 \
+        es-001 \
+        fr-001 \
+        ru-001 \
+        bn-001 \
+        pt-001 \
+        id-001 \
+        ur-001
     do
         directory_exists_or_err "$top/locales/$x"
     done
@@ -37,7 +47,7 @@ test_locales_subdirectories() {
 
 test_locale_peer_id_counts_match() {
     reference=""
-    for loc in en-001 en-us en-gb en-gb-oxendict cy-001 cy-gb; do
+    for loc in en-001 en-us en-gb en-gb-oxendict cy-001 cy-gb zh-001 hi-001 ar-001 es-001 fr-001 ru-001 bn-001 pt-001 id-001 ur-001; do
         count=$(find "$top/locales/$loc/topics" -name .locale-peer-id | wc -l | tr -d ' ')
         if [ -z "$reference" ]; then
             reference="$count"

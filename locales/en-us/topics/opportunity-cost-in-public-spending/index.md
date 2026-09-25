@@ -75,7 +75,7 @@ pounds — and the same discipline applies directly:
   (see [technical debt as public value erosion](../technical-debt-as-public-value-erosion/)).
 - Connect this directly to [value for money](../value-for-money/): VFM's "economy" test is
   meaningless without an honest opportunity-cost comparator, and to
-  [cost of delay in public programs](../cost-of-delay-in-public-programs/), which prices the
+  [cost of delay in public programs](../cost-of-delay-in-public-programmes/), which prices the
   time dimension of the same forgone-alternative logic.
 
 ## Pitfalls

@@ -12,8 +12,18 @@ top="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 cd "$top"
 
 # en-gb-oxendict -> en-us: British vocabulary swapped to American; -ize spelling unchanged.
+#
+# Runs on the whole file at once (-0777), and protects markdown link targets — `(...)` right
+# after `]` — from the substitutions first. Without this guard, a slug that happens to contain
+# a transformed word (e.g. "cost-of-delay-in-public-programmes") gets its *link text* rewritten
+# to a directory that doesn't exist ("...-programs/"), since en-us never renames directories
+# (only en-gb/en-001's -ize/-ise family rename does) — this broke the site's prerendered build
+# with a 404 on exactly that link before the guard was added. Don't remove the guard.
 to_en_us() {
-  perl -pe '
+  perl -0777 -pe '
+    my @saved;
+    s/(\]\([^)]*\))/push(@saved, $1), "\x01" . $#saved . "\x01"/ge;
+
     s/\bmaths\b/math/g;               s/\bMaths\b/Math/g;
     s/\blicence\b/license/g;          s/\bLicence\b/License/g;          s/\blicences\b/licenses/g; s/\bLicences\b/Licenses/g;
     s/\bmodelled\b/modeled/g;         s/\bModelled\b/Modeled/g;         s/\bmodelling\b/modeling/g; s/\bModelling\b/Modeling/g;
@@ -26,6 +36,8 @@ to_en_us() {
     s/\bcolour\b/color/g;             s/\bColour\b/Color/g;
     s/\bfavour\b/favor/g;             s/\bFavour\b/Favor/g;
     s/\bcatalogue\b/catalog/g;        s/\bCatalogue\b/Catalog/g;
+
+    s/\x01(\d+)\x01/$saved[$1]/g;
   '
 }
 

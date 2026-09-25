@@ -50,7 +50,7 @@ but avoiding this overlap is the analyst's responsibility.
 **Local authority (job club SROI)**: a unit cost database entry for "moving from unemployment into
 sustained employment" is applied to 45 participants at an illustrative proxy of £8,500 per person
 per year: 45 × £8,500 = £382,500 gross value, before the deadweight and attribution adjustments
-shown in [social return on investment](../social-return-on-investment/#worked-example).
+shown in [social return on investment](../social-return-on-investment/).
 
 ## Software engineering connection
 

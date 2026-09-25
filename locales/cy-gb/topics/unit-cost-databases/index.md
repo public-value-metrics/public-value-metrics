@@ -53,7 +53,7 @@ gronfa ddata'n cyflenwi'r rhif, ond cyfrifoldeb y dadansoddwr yw osgoi'r gorgyff
 ddiweithdra i gyflogaeth gynaliadwy" yn cael ei gymhwyso i 45 o gyfranogwyr ar brocsi enghreifftiol o
 £8,500 y pen y flwyddyn: 45 × £8,500 = £382,500 o werth crynswth, cyn yr addasiadau pwysau marw a
 phriodoli a ddangosir yn
-[enillion cymdeithasol ar fuddsoddiad](../social-return-on-investment/#worked-example).
+[enillion cymdeithasol ar fuddsoddiad](../social-return-on-investment/).
 
 ## Cysylltiad peirianneg feddalwedd
 
