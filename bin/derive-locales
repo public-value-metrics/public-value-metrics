@@ -36,6 +36,13 @@ to_en_us() {
     s/\bcolour\b/color/g;             s/\bColour\b/Color/g;
     s/\bfavour\b/favor/g;             s/\bFavour\b/Favor/g;
     s/\bcatalogue\b/catalog/g;        s/\bCatalogue\b/Catalog/g;
+    s/\bcancelled\b/canceled/g;       s/\bCancelled\b/Canceled/g;        s/\bcancelling\b/canceling/g; s/\bCancelling\b/Canceling/g;
+    s/\blabelled\b/labeled/g;         s/\bLabelled\b/Labeled/g;          s/\blabelling\b/labeling/g;   s/\bLabelling\b/Labeling/g;
+    s/(?<=[a-z])labelled\b/labeled/g; s/(?<=[a-z])labelling\b/labeling/g; # catches compounds e.g. "relabelling" with no internal word boundary
+    s/\bbehaviour\b/behavior/g;       s/\bBehaviour\b/Behavior/g;        s/\bbehaviours\b/behaviors/g; s/\bBehaviours\b/Behaviors/g;
+    s/\bneighbour\b/neighbor/g;       s/\bNeighbour\b/Neighbor/g;        s/\bneighbours\b/neighbors/g; s/\bNeighbours\b/Neighbors/g;
+    s/\btheatre\b/theater/g;          s/\bTheatre\b/Theater/g;           s/\btheatres\b/theaters/g;    s/\bTheatres\b/Theaters/g;
+    s/\benrolment\b/enrollment/g;     s/\bEnrolment\b/Enrollment/g;      s/\benrol\b/enroll/g;         s/\bEnrol\b/Enroll/g;
 
     s/\x01(\d+)\x01/$saved[$1]/g;
   '
@@ -94,6 +101,18 @@ for cygb_dir in locales/cy-gb/topics/*/; do
   count=$((count + 1))
 done
 echo "Derived cy-001 (copy of cy-gb) for $count topics."
+
+count=0
+for zhcn_dir in locales/zh-001/topics/*/; do
+  slug=$(basename "$zhcn_dir")
+  src="$zhcn_dir/index.md"
+  [ -f "$src" ] || continue
+  dst_dir="locales/zh-cn/topics/$slug"
+  mkdir -p "$dst_dir"
+  cp "$src" "$dst_dir/index.md"
+  count=$((count + 1))
+done
+echo "Derived zh-cn (copy of zh-001) for $count topics."
 
 # (Re)create README.md symlinks everywhere index.md exists.
 for dir in $(find locales -type d -mindepth 3); do

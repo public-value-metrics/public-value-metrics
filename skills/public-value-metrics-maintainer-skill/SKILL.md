@@ -6,11 +6,12 @@ description: Maintain this repository — add or edit a topic file under locales
 # Maintaining public-value-metrics
 
 This repo's reference docs live under `locales/<locale>/topics/<slug>/`, one directory per topic,
-for each of 16 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
-skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), and ten
-further full-language "World" translations — `zh-001` (Chinese), `hi-001` (Hindi), `ar-001`
-(Arabic), `es-001` (Spanish), `fr-001` (French), `ru-001` (Russian), `bn-001` (Bengali), `pt-001`
-(Portuguese), `id-001` (Indonesian), `ur-001` (Urdu). Every topic directory contains:
+for each of 17 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
+skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), and eleven
+further full-language translations — `zh-001` (Chinese, World), `zh-cn` (Chinese, China; see
+below), `hi-001` (Hindi), `ar-001` (Arabic), `es-001` (Spanish), `fr-001` (French), `ru-001`
+(Russian), `bn-001` (Bengali), `pt-001` (Portuguese), `id-001` (Indonesian), `ur-001` (Urdu).
+Every topic directory contains:
 
 - `index.md` — the actual content
 - `README.md` — a real symlink to `index.md` (`ln -s index.md README.md`), so the directory
@@ -23,7 +24,7 @@ further full-language "World" translations — `zh-001` (Chinese), `hi-001` (Hin
   [locale-help](https://github.com/SixArm/locale-help) for the full spec this convention follows.
 
 There is no build step, no CI — consistency is entirely convention-based, so following the
-existing pattern precisely (across all 16 locales, not just one) is the whole job.
+existing pattern precisely (across all 17 locales, not just one) is the whole job.
 
 ## The locale relationships (this repo's specific dialect map)
 
@@ -48,21 +49,30 @@ mechanical transform — and are text-identical to each other in this repo (Wels
 of the World-vs-regional English split). Both keep the **English** (`en-gb-oxendict`) slug for
 every topic directory — only the content is translated, never the directory name.
 
-The ten further locales (`zh-001`, `hi-001`, `ar-001`, `es-001`, `fr-001`, `ru-001`, `bn-001`,
-`pt-001`, `id-001`, `ur-001`) are each a genuine, independent full-language translation of
+The ten further "World" locales (`zh-001`, `hi-001`, `ar-001`, `es-001`, `fr-001`, `ru-001`,
+`bn-001`, `pt-001`, `id-001`, `ur-001`) are each a genuine, independent full-language translation of
 `en-gb-oxendict`, following the same rule as Welsh: they keep the **English** (`en-gb-oxendict`)
 slug for every topic directory — only the content is translated, never the directory name — so
 that cross-links (`../<slug>/`) never need locale-specific handling except for the `-ize`/`-ise`
-English dialect split described above. None of these ten locales has a regional variant in this
-repo (no `es-es`, `zh-cn`, `ar-eg`, etc.) — just the single "World" form per language, matching the
-locale table the project maintainer specified.
+English dialect split described above. None of these has a regional variant beyond `zh-cn` (no
+`es-es`, `ar-eg`, etc.) — just the single "World" form per language, matching the locale table the
+project maintainer specified.
+
+`zh-cn` (Chinese, China) is the one regional exception: it is derived as a byte-for-byte copy of
+`zh-001` (see `bin/derive-locales`), not an independently-authored translation. Both use simplified
+script, and this book has no Mainland-China-specific subject matter that would call for different
+terminology — a genuine independent translation would read the same in practice. If that stops
+being true for a given topic (e.g. a future topic references a China-specific institution or
+programme), translate that topic's `zh-cn` version by hand and note the divergence; don't let
+`bin/derive-locales` silently overwrite a hand-translated difference back to `zh-001`'s text.
 
 **Practical consequence for maintainers**: when you add or edit a topic, write (or edit) it once
-in `en-gb-oxendict`, then mechanically derive `en-gb`/`en-001` and `en-us` with
-`bin/derive-locales`, then translate (or re-translate) into `cy-gb`/`cy-001` and the ten other
+in `en-gb-oxendict`, then mechanically derive `en-gb`/`en-001`/`en-us` and `zh-cn`/`cy-001` with
+`bin/derive-locales`, then translate (or re-translate) into `cy-gb`, `zh-001`, and the nine other
 full-language locales. Never hand-edit `en-gb`, `en-001`, or `en-us` independently of
 `en-gb-oxendict` — they will drift out of sync with the master and with each other. The eleven
-translated locales (Welsh plus the ten others) are independent prose and must each be re-translated
+independently-translated locales (Welsh plus the ten non-`zh-cn` "World" locales) are independent
+prose and must each be re-translated
 by hand when the English master changes — there is no mechanical shortcut for those.
 
 ## Slugs can differ by locale
