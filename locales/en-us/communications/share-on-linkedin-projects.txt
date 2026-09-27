@@ -1,0 +1,15 @@
+Public Value Metrics
+
+• Link: https://public-value-metrics.github.io/
+• Tags: #PublicValue #GovTech #CostBenefit #SocialImpact
+• Keywords: public value, cost-benefit analysis, social return on investment
+
+Summary: Public Value Metrics is a reference book that explains the math public-sector and social-sector organizations use to decide whether a program is worth funding. It covers opportunity cost, social discount rates, distributional weighting, social return on investment, and other core concepts. It is written for software engineers who build the systems those decisions run on, and published as a free open book with a companion website.
+
+Benefits: A reader gets a plain explanation of a concept, why it exists, the method behind it, and a worked example with real numbers. A calculation that used to live only in a finance or policy team's head becomes something an engineer can check, question, and build around correctly.
+
+Why it matters: Software increasingly decides who gets served first, what gets measured, and what a dashboard reports to a minister or a board. That software is usually built by engineers who were never taught the vocabulary the finance and policy people in the room already use. This book closes that gap from the engineering side, in plain language, grounded in worked examples rather than theory alone.
+
+Please share: Pass this along to anyone building software for a government agency, a charity, or a foundation. It is also useful to anyone who reviews public spending and wants a plain reference instead of a textbook. A mention in a team channel or a repost reaches exactly the people this was written for.
+
+Advice welcome: I would like to hear which concepts are missing, and where a worked example does not match how your organization actually calculates it. Message me directly with a topic to add or a correction worth making. I read and act on every message.
