@@ -6,16 +6,17 @@ description: Maintain this repository — add or edit a topic file under locales
 # Maintaining public-value-metrics
 
 This repo's reference docs live under `locales/<locale>/topics/<slug>/`, one directory per topic,
-for each of 29 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
+for each of 30 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
 skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), ten
 "World" full-language translations — `zh-001` (Chinese, World), `zh-cn` (Chinese, China; see
 below), `hi-001` (Hindi), `ar-001` (Arabic), `es-001` (Spanish), `fr-001` (French), `ru-001`
 (Russian), `bn-001` (Bengali), `pt-001` (Portuguese), `id-001` (Indonesian), `ur-001` (Urdu) —
-three full-language translations, `de-de` (German, Germany), `ja-jp` (Japanese, Japan), and
-`ko-kr` (Korean, Korea), and nine country-specific locales that are content-identical to their
-"World" counterpart (same reasoning as `zh-cn`/`zh-001`): `ar-eg` (Egypt), `bn-bd` (Bangladesh),
-`hi-in` (India), `es-es` (Spain), `fr-fr` (France), `ru-ru` (Russia), `pt-pt` (Portugal), `ur-pk`
-(Pakistan), `id-id` (Indonesia). Every topic directory contains:
+four full-language translations, `de-de` (German, Germany), `ja-jp` (Japanese, Japan), `ko-kr`
+(Korean, Korea), and `sv-se` (Swedish, Sweden), and nine country-specific locales that are
+content-identical to their "World" counterpart (same reasoning as `zh-cn`/`zh-001`): `ar-eg`
+(Egypt), `bn-bd` (Bangladesh), `hi-in` (India), `es-es` (Spain), `fr-fr` (France), `ru-ru`
+(Russia), `pt-pt` (Portugal), `ur-pk` (Pakistan), `id-id` (Indonesia). Every topic directory
+contains:
 
 - `index.md` — the actual content
 - `README.md` — a real symlink to `index.md` (`ln -s index.md README.md`), so the directory
@@ -28,7 +29,7 @@ three full-language translations, `de-de` (German, Germany), `ja-jp` (Japanese, 
   [locale-help](https://github.com/SixArm/locale-help) for the full spec this convention follows.
 
 There is no build step, no CI — consistency is entirely convention-based, so following the
-existing pattern precisely (across all 29 locales, not just one) is the whole job.
+existing pattern precisely (across all 30 locales, not just one) is the whole job.
 
 ## The locale relationships (this repo's specific dialect map)
 
