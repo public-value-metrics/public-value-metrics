@@ -6,12 +6,12 @@ description: Maintain this repository — add or edit a topic file under locales
 # Maintaining public-value-metrics
 
 This repo's reference docs live under `locales/<locale>/topics/<slug>/`, one directory per topic,
-for each of 17 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
-skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), and eleven
+for each of 18 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
+skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), and twelve
 further full-language translations — `zh-001` (Chinese, World), `zh-cn` (Chinese, China; see
 below), `hi-001` (Hindi), `ar-001` (Arabic), `es-001` (Spanish), `fr-001` (French), `ru-001`
-(Russian), `bn-001` (Bengali), `pt-001` (Portuguese), `id-001` (Indonesian), `ur-001` (Urdu).
-Every topic directory contains:
+(Russian), `bn-001` (Bengali), `pt-001` (Portuguese), `id-001` (Indonesian), `ur-001` (Urdu),
+`de-de` (German, Germany). Every topic directory contains:
 
 - `index.md` — the actual content
 - `README.md` — a real symlink to `index.md` (`ln -s index.md README.md`), so the directory
@@ -24,7 +24,7 @@ Every topic directory contains:
   [locale-help](https://github.com/SixArm/locale-help) for the full spec this convention follows.
 
 There is no build step, no CI — consistency is entirely convention-based, so following the
-existing pattern precisely (across all 17 locales, not just one) is the whole job.
+existing pattern precisely (across all 18 locales, not just one) is the whole job.
 
 ## The locale relationships (this repo's specific dialect map)
 
