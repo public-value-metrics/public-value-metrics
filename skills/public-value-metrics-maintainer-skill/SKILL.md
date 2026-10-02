@@ -6,19 +6,20 @@ description: Maintain this repository — add or edit a topic file under locales
 # Maintaining public-value-metrics
 
 This repo's reference docs live under `locales/<locale>/topics/<slug>/`, one directory per topic,
-for each of 34 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
+for each of 35 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
 skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), ten
 "World" full-language translations — `zh-001` (Chinese, World), `zh-cn` (Chinese, China; see
 below), `hi-001` (Hindi), `ar-001` (Arabic), `es-001` (Spanish), `fr-001` (French), `ru-001`
 (Russian), `bn-001` (Bengali), `pt-001` (Portuguese), `id-001` (Indonesian), `ur-001` (Urdu) —
 five full-language translations, `de-de` (German, Germany), `ja-jp` (Japanese, Japan), `ko-kr`
-(Korean, Korea), `sv-se` (Swedish, Sweden), and `nl-nl` (Dutch, Netherlands), and twelve locales
+(Korean, Korea), `sv-se` (Swedish, Sweden), and `nl-nl` (Dutch, Netherlands), and thirteen locales
 that are content-identical to a counterpart (same reasoning as `zh-cn`/`zh-001`): nine
 country-specific locales — `ar-eg` (Egypt), `bn-bd` (Bangladesh), `hi-in` (India), `es-es` (Spain),
 `fr-fr` (France), `ru-ru` (Russia), `pt-pt` (Portugal), `ur-pk` (Pakistan), `id-id` (Indonesia) —
-and three World variants of a full-language translation, `ja-001` (Japanese, World;
-content-identical to `ja-jp`), `de-001` (German, World; content-identical to `de-de`), and
-`sv-001` (Swedish, World; content-identical to `sv-se`). Every topic directory contains:
+and four World variants of a full-language translation, `ja-001` (Japanese, World;
+content-identical to `ja-jp`), `de-001` (German, World; content-identical to `de-de`), `sv-001`
+(Swedish, World; content-identical to `sv-se`), and `ko-001` (Korean, World; content-identical to
+`ko-kr`). Every topic directory contains:
 
 - `index.md` — the actual content
 - `README.md` — a real symlink to `index.md` (`ln -s index.md README.md`), so the directory
@@ -31,7 +32,7 @@ content-identical to `ja-jp`), `de-001` (German, World; content-identical to `de
   [locale-help](https://github.com/SixArm/locale-help) for the full spec this convention follows.
 
 There is no build step, no CI — consistency is entirely convention-based, so following the
-existing pattern precisely (across all 34 locales, not just one) is the whole job.
+existing pattern precisely (across all 35 locales, not just one) is the whole job.
 
 ## The locale relationships (this repo's specific dialect map)
 
