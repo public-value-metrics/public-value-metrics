@@ -1020,11 +1020,60 @@ const it = {
 	paginationNext: 'Successivo'
 };
 
+const tr = {
+	skipToContent: 'İçeriğe geç',
+	navHome: 'Ana sayfa',
+	navContents: 'İçindekiler',
+	navTopicsAZ: 'Konular A-Z',
+	navSearch: 'Ara',
+	navAbout: 'Hakkında',
+	footerSourceLink: 'Kaynak',
+	footerTaglineSuffix:
+		' — dünya genelinde hükümet ve sosyal sektör kuruluşları için geliştirme yapan yazılım mühendisleri için kamu değeri matematiği, örnekleri ve akıl yürütmesi.',
+	footerNote:
+		'Bu kitaptaki rakamlar hızla eskir. Her konu kıyaslamalarını metin içinde tarihler; gerçek bir iş gerekçesinde herhangi bir sayıyı kullanmadan önce yeniden doğrulayın.',
+	pickerTheme: 'Tema',
+	pickerLanguage: 'Dil',
+	pickerTextSize: 'Metin boyutu',
+	pickerShare: 'Paylaş',
+	shareCopyLink: 'Bağlantıyı kopyala',
+	shareCopied: 'Kopyalandı',
+	shareCopyFailed: 'Kopyalama başarısız',
+	shareEmailLabel: 'Bağlantıyı e-postayla gönder',
+	shareLinkedinLabel: 'LinkedIn\'de paylaş',
+	shareRedditLabel: 'Reddit\'te paylaş',
+	shareBlueskyLabel: 'Bluesky\'da paylaş',
+	shareMastodonLabel: 'Mastodon\'da paylaş',
+	startHere: 'Buradan başlayın',
+	startHereSubtitle: 'Geri kalan her şeyin üzerine kurulduğu üç fikir.',
+	contentsMetaDescription: (bookTitle) => `${bookTitle} içindeki her konu, okuma sırasıyla.`,
+	topicsMetaDescription: (bookTitle) => `${bookTitle} içindeki her konu, A'dan Z'ye listelenmiş.`,
+	topicsIntroPrefix: (count) => `Alfabetik sırayla tüm ${count} konu. Okuma sırası için bkz.`,
+	contentsLinkText: 'içindekiler',
+	jumpToLetter: 'Harfe git',
+	searchMetaDescription: (bookTitle) => `${bookTitle} içindeki her konuda arayın.`,
+	searchIntro: (count) =>
+		`Tüm ${count} konuda başlık, bölüm, özet ve bölüm başlıklarına göre arayın. Her şey tarayıcınızda çalışır — yazdığınız hiçbir şey bu sayfadan ayrılmaz.`,
+	searchInputLabel: 'Konularda ara',
+	searchPlaceholder: 'SROI, iskonto, sonuç başına maliyet…',
+	searchHintEmptyHtml: 'Aramak için yazın. <em>SROI</em>, <em>ölü ağırlık</em> veya <em>paranın karşılığı</em> deneyin.',
+	noResultsPrefix: 'Hiçbir konu eşleşmiyor: ',
+	noResultsMiddle: '. Daha geniş bir terim deneyin veya göz atın: ',
+	resultsCountSingular: 'konu',
+	resultsCountPlural: 'konu',
+	topicPosition: (index, total) => `Konu ${index} / ${total}`,
+	onThisPage: 'Bu sayfada',
+	paginationLabel: 'Kitap',
+	paginationPrevious: 'Önceki',
+	paginationNext: 'Sonraki'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
 	'et-001': et,
 	'it-001': it,
+	'tr-001': tr,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,

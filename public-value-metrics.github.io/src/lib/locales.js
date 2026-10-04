@@ -44,7 +44,8 @@ export const LOCALE_LABELS = {
 	'vi-001': 'Tiếng Việt',
 	'da-001': 'Dansk',
 	'et-001': 'Eesti',
-	'it-001': 'Italiano'
+	'it-001': 'Italiano',
+	'tr-001': 'Türkçe'
 };
 
 export const DEFAULT_LOCALE = 'en-gb-oxendict';
