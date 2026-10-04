@@ -1164,6 +1164,54 @@ const uk = {
 	paginationNext: 'Наступна'
 };
 
+const cs = {
+	skipToContent: 'Přeskočit na obsah',
+	navHome: 'Domů',
+	navContents: 'Obsah',
+	navTopicsAZ: 'Témata A–Ž',
+	navSearch: 'Hledat',
+	navAbout: 'O knize',
+	footerSourceLink: 'Zdroj',
+	footerTaglineSuffix:
+		' — matematika, příklady a uvažování o veřejné hodnotě pro softwarové inženýry budující řešení pro vládní organizace a organizace sociálního sektoru po celém světě.',
+	footerNote:
+		'Čísla v této knize rychle stárnou. Každé téma datuje své srovnávací hodnoty v textu; než jakékoli číslo použijete ve skutečném byznys případu, ověřte je znovu.',
+	pickerTheme: 'Motiv',
+	pickerLanguage: 'Jazyk',
+	pickerTextSize: 'Velikost textu',
+	pickerShare: 'Sdílet',
+	shareCopyLink: 'Kopírovat odkaz',
+	shareCopied: 'Zkopírováno',
+	shareCopyFailed: 'Kopírování se nezdařilo',
+	shareEmailLabel: 'Poslat odkaz e-mailem',
+	shareLinkedinLabel: 'Sdílet na LinkedIn',
+	shareRedditLabel: 'Sdílet na Redditu',
+	shareBlueskyLabel: 'Sdílet na Bluesky',
+	shareMastodonLabel: 'Sdílet na Mastodonu',
+	startHere: 'Začněte zde',
+	startHereSubtitle: 'Tři myšlenky, na nichž stojí všechno ostatní.',
+	contentsMetaDescription: (bookTitle) => `Každé téma knihy „${bookTitle}“ v pořadí čtení.`,
+	topicsMetaDescription: (bookTitle) => `Každé téma knihy „${bookTitle}“ v abecedním pořadí.`,
+	topicsIntroPrefix: (count) => `Všechna témata (${count}) v abecedním pořadí. Pořadí čtení najdete v části:`,
+	contentsLinkText: 'obsah',
+	jumpToLetter: 'Přejít na písmeno',
+	searchMetaDescription: (bookTitle) => `Prohledejte každé téma knihy „${bookTitle}“.`,
+	searchIntro: (count) =>
+		`Prohledejte všechna témata (${count}) podle názvu, části, shrnutí a nadpisů oddílů. Vše běží ve vašem prohlížeči — nic z toho, co zadáte, tuto stránku neopustí.`,
+	searchInputLabel: 'Hledat témata',
+	searchPlaceholder: 'SROI, diskontování, náklady na výsledek…',
+	searchHintEmptyHtml: 'Zadejte hledaný výraz. Zkuste <em>SROI</em>, <em>mrtvá váha</em> nebo <em>hodnota za peníze</em>.',
+	noResultsPrefix: 'Žádné téma neodpovídá dotazu: ',
+	noResultsMiddle: '. Zkuste širší výraz nebo procházejte: ',
+	resultsCountSingular: 'téma',
+	resultsCountPlural: 'témat',
+	topicPosition: (index, total) => `Téma ${index} z ${total}`,
+	onThisPage: 'Na této stránce',
+	paginationLabel: 'Kniha',
+	paginationPrevious: 'Předchozí',
+	paginationNext: 'Další'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
@@ -1172,6 +1220,7 @@ const TRANSLATIONS = {
 	'tr-001': tr,
 	'pl-001': pl,
 	'uk-001': uk,
+	'cs-001': cs,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,
