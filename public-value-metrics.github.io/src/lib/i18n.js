@@ -1068,12 +1068,61 @@ const tr = {
 	paginationNext: 'Sonraki'
 };
 
+const pl = {
+	skipToContent: 'Przejdź do treści',
+	navHome: 'Strona główna',
+	navContents: 'Spis treści',
+	navTopicsAZ: 'Tematy A-Z',
+	navSearch: 'Szukaj',
+	navAbout: 'O książce',
+	footerSourceLink: 'Źródło',
+	footerTaglineSuffix:
+		' — matematyka, przykłady i rozumowanie wartości publicznej dla inżynierów oprogramowania budujących rozwiązania dla organizacji rządowych i sektora społecznego na całym świecie.',
+	footerNote:
+		'Liczby w tej książce szybko się starzeją. Każdy temat datuje swoje wzorce w tekście; zweryfikuj je ponownie, zanim użyjesz jakiejkolwiek liczby w rzeczywistym uzasadnieniu biznesowym.',
+	pickerTheme: 'Motyw',
+	pickerLanguage: 'Język',
+	pickerTextSize: 'Rozmiar tekstu',
+	pickerShare: 'Udostępnij',
+	shareCopyLink: 'Kopiuj link',
+	shareCopied: 'Skopiowano',
+	shareCopyFailed: 'Kopiowanie nie powiodło się',
+	shareEmailLabel: 'Wyślij link e-mailem',
+	shareLinkedinLabel: 'Udostępnij na LinkedIn',
+	shareRedditLabel: 'Udostępnij na Reddit',
+	shareBlueskyLabel: 'Udostępnij na Bluesky',
+	shareMastodonLabel: 'Udostępnij na Mastodon',
+	startHere: 'Zacznij tutaj',
+	startHereSubtitle: 'Trzy idee, na których opiera się wszystko inne.',
+	contentsMetaDescription: (bookTitle) => `Każdy temat w ${bookTitle}, w kolejności czytania.`,
+	topicsMetaDescription: (bookTitle) => `Każdy temat w ${bookTitle}, wymieniony od A do Z.`,
+	topicsIntroPrefix: (count) => `Wszystkie ${count} tematów w porządku alfabetycznym. Kolejność czytania znajdziesz w:`,
+	contentsLinkText: 'spisie treści',
+	jumpToLetter: 'Przejdź do litery',
+	searchMetaDescription: (bookTitle) => `Przeszukaj każdy temat w ${bookTitle}.`,
+	searchIntro: (count) =>
+		`Przeszukaj wszystkie ${count} tematów według tytułu, części, streszczenia i nagłówków sekcji. Wszystko działa w Twojej przeglądarce — nic, co wpiszesz, nie opuszcza tej strony.`,
+	searchInputLabel: 'Szukaj tematów',
+	searchPlaceholder: 'SROI, dyskonto, koszt na rezultat…',
+	searchHintEmptyHtml: 'Wpisz, aby wyszukać. Spróbuj <em>SROI</em>, <em>efekt jałowy</em> lub <em>wartość za pieniądze</em>.',
+	noResultsPrefix: 'Żaden temat nie pasuje do: ',
+	noResultsMiddle: '. Spróbuj szerszego terminu lub przeglądaj: ',
+	resultsCountSingular: 'temat',
+	resultsCountPlural: 'tematów',
+	topicPosition: (index, total) => `Temat ${index} z ${total}`,
+	onThisPage: 'Na tej stronie',
+	paginationLabel: 'Książka',
+	paginationPrevious: 'Poprzedni',
+	paginationNext: 'Następny'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
 	'et-001': et,
 	'it-001': it,
 	'tr-001': tr,
+	'pl-001': pl,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,
