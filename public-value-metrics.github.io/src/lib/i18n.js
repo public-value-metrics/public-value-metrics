@@ -1116,6 +1116,54 @@ const pl = {
 	paginationNext: 'Następny'
 };
 
+const uk = {
+	skipToContent: 'Перейти до змісту',
+	navHome: 'Головна',
+	navContents: 'Зміст',
+	navTopicsAZ: 'Теми А–Я',
+	navSearch: 'Пошук',
+	navAbout: 'Про книгу',
+	footerSourceLink: 'Джерело',
+	footerTaglineSuffix:
+		' — математика, приклади та міркування щодо публічної цінності для інженерів-програмістів, які створюють рішення для урядових організацій та організацій соціального сектору в усьому світі.',
+	footerNote:
+		'Числа в цій книзі швидко застарівають. Кожна тема датує свої еталони в тексті; перевірте їх заново, перш ніж використовувати будь-яке число в реальному бізнес-кейсі.',
+	pickerTheme: 'Тема оформлення',
+	pickerLanguage: 'Мова',
+	pickerTextSize: 'Розмір тексту',
+	pickerShare: 'Поділитися',
+	shareCopyLink: 'Копіювати посилання',
+	shareCopied: 'Скопійовано',
+	shareCopyFailed: 'Не вдалося скопіювати',
+	shareEmailLabel: 'Надіслати посилання електронною поштою',
+	shareLinkedinLabel: 'Поділитися в LinkedIn',
+	shareRedditLabel: 'Поділитися в Reddit',
+	shareBlueskyLabel: 'Поділитися в Bluesky',
+	shareMastodonLabel: 'Поділитися в Mastodon',
+	startHere: 'Почніть тут',
+	startHereSubtitle: 'Три ідеї, на яких тримається все інше.',
+	contentsMetaDescription: (bookTitle) => `Кожна тема книги «${bookTitle}» у порядку читання.`,
+	topicsMetaDescription: (bookTitle) => `Кожна тема книги «${bookTitle}» в алфавітному порядку.`,
+	topicsIntroPrefix: (count) => `Усі теми (${count}) в алфавітному порядку. Порядок читання дивіться у розділі:`,
+	contentsLinkText: 'зміст',
+	jumpToLetter: 'Перейти до літери',
+	searchMetaDescription: (bookTitle) => `Пошук за кожною темою книги «${bookTitle}».`,
+	searchIntro: (count) =>
+		`Шукайте серед усіх тем (${count}) за назвою, частиною, анотацією та заголовками розділів. Усе працює у вашому браузері — нічого з того, що ви вводите, не залишає цієї сторінки.`,
+	searchInputLabel: 'Пошук тем',
+	searchPlaceholder: 'SROI, дисконтування, вартість на результат…',
+	searchHintEmptyHtml: 'Введіть запит для пошуку. Спробуйте <em>SROI</em>, <em>мертвий вантаж</em> або <em>цінність за гроші</em>.',
+	noResultsPrefix: 'Жодна тема не відповідає запиту: ',
+	noResultsMiddle: '. Спробуйте ширший термін або перегляньте: ',
+	resultsCountSingular: 'тема',
+	resultsCountPlural: 'тем',
+	topicPosition: (index, total) => `Тема ${index} із ${total}`,
+	onThisPage: 'На цій сторінці',
+	paginationLabel: 'Книга',
+	paginationPrevious: 'Попередня',
+	paginationNext: 'Наступна'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
@@ -1123,6 +1171,7 @@ const TRANSLATIONS = {
 	'it-001': it,
 	'tr-001': tr,
 	'pl-001': pl,
+	'uk-001': uk,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,
