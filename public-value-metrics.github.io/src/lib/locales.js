@@ -48,7 +48,8 @@ export const LOCALE_LABELS = {
 	'tr-001': 'Türkçe',
 	'pl-001': 'Polski',
 	'uk-001': 'Українська',
-	'cs-001': 'Čeština'
+	'cs-001': 'Čeština',
+	'ro-001': 'Română'
 };
 
 export const DEFAULT_LOCALE = 'en-gb-oxendict';

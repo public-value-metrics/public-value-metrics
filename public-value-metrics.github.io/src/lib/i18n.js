@@ -1212,6 +1212,54 @@ const cs = {
 	paginationNext: 'Další'
 };
 
+const ro = {
+	skipToContent: 'Salt la conținut',
+	navHome: 'Acasă',
+	navContents: 'Cuprins',
+	navTopicsAZ: 'Subiecte A–Z',
+	navSearch: 'Căutare',
+	navAbout: 'Despre carte',
+	footerSourceLink: 'Sursă',
+	footerTaglineSuffix:
+		' — matematica, exemplele și raționamentul valorii publice pentru inginerii software care construiesc soluții pentru organizații guvernamentale și din sectorul social din întreaga lume.',
+	footerNote:
+		'Cifrele din această carte îmbătrânesc repede. Fiecare subiect își datează reperele în text; verificați-le din nou înainte de a folosi orice cifră într-un caz de afaceri real.',
+	pickerTheme: 'Temă',
+	pickerLanguage: 'Limbă',
+	pickerTextSize: 'Dimensiunea textului',
+	pickerShare: 'Distribuie',
+	shareCopyLink: 'Copiază linkul',
+	shareCopied: 'Copiat',
+	shareCopyFailed: 'Copierea a eșuat',
+	shareEmailLabel: 'Trimite linkul prin e-mail',
+	shareLinkedinLabel: 'Distribuie pe LinkedIn',
+	shareRedditLabel: 'Distribuie pe Reddit',
+	shareBlueskyLabel: 'Distribuie pe Bluesky',
+	shareMastodonLabel: 'Distribuie pe Mastodon',
+	startHere: 'Începeți aici',
+	startHereSubtitle: 'Trei idei pe care se sprijină tot restul.',
+	contentsMetaDescription: (bookTitle) => `Fiecare subiect din „${bookTitle}”, în ordinea lecturii.`,
+	topicsMetaDescription: (bookTitle) => `Fiecare subiect din „${bookTitle}”, în ordine alfabetică.`,
+	topicsIntroPrefix: (count) => `Toate cele ${count} de subiecte în ordine alfabetică. Pentru ordinea lecturii, vedeți:`,
+	contentsLinkText: 'cuprins',
+	jumpToLetter: 'Salt la litera',
+	searchMetaDescription: (bookTitle) => `Căutați în fiecare subiect din „${bookTitle}”.`,
+	searchIntro: (count) =>
+		`Căutați în toate cele ${count} de subiecte după titlu, parte, rezumat și titluri de secțiuni. Totul rulează în browserul dumneavoastră — nimic din ce tastați nu părăsește această pagină.`,
+	searchInputLabel: 'Căutare subiecte',
+	searchPlaceholder: 'SROI, actualizare, cost per rezultat…',
+	searchHintEmptyHtml: 'Tastați pentru a căuta. Încercați <em>SROI</em>, <em>efect de inerție</em> sau <em>valoare pentru bani</em>.',
+	noResultsPrefix: 'Niciun subiect nu se potrivește cu: ',
+	noResultsMiddle: '. Încercați un termen mai larg sau răsfoiți: ',
+	resultsCountSingular: 'subiect',
+	resultsCountPlural: 'subiecte',
+	topicPosition: (index, total) => `Subiectul ${index} din ${total}`,
+	onThisPage: 'Pe această pagină',
+	paginationLabel: 'Carte',
+	paginationPrevious: 'Anterior',
+	paginationNext: 'Următorul'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
@@ -1221,6 +1269,7 @@ const TRANSLATIONS = {
 	'pl-001': pl,
 	'uk-001': uk,
 	'cs-001': cs,
+	'ro-001': ro,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,
