@@ -2,7 +2,7 @@
 
 Komplexní úvod do matematiky, příkladů a uvažování o veřejné hodnotě, napsaný pro softwarové inženýry budující řešení pro vládní organizace a organizace sociálního sektoru po celém světě. Každý soubor se věnuje jedné metrice nebo pojmu: definice, proč na tom záleží, matematika, praktický příklad, souvislost se softwarovým inženýrstvím, úskalí a zdroje.
 
-Jste tu noví? Začněte [veřejnou hodnotou](locales/cs-001/topics/public-value/), [hodnotou za peníze](locales/cs-001/topics/value-for-money/) a [teorií změny](locales/cs-001/topics/theory-of-change/) — třemi myšlenkami, na nichž stojí všechno ostatní.
+Jste tu noví? Začněte [veřejnou hodnotou](locales/cs-001/témata/veřejná-hodnota/), [hodnotou za peníze](locales/cs-001/témata/hodnota-za-peníze/) a [teorií změny](locales/cs-001/témata/teorie-změny/) — třemi myšlenkami, na nichž stojí všechno ostatní.
 
 ## Základy veřejné hodnoty
 

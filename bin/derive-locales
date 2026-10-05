@@ -1,7 +1,8 @@
 #!/bin/sh
 # Derive en-gb, en-001, en-us from the canonical en-gb-oxendict content, and cy-001 from cy-gb.
 # Run from the repo root after writing/editing any locales/en-gb-oxendict/topics/*/index.md
-# or locales/cy-gb/topics/*/index.md file.
+# or locales/cy-gb/pynciau/*/index.md file (non-English locales translate the topics/ segment
+# and each topic slug, so cy-001 and zh-cn copy under their source locale's own segment and slugs).
 #
 # Uses perl (not sed) for the text transforms: BSD sed on macOS does not support \b word
 # boundaries in extended-regex mode, so a sed-based version of this script silently makes no
@@ -91,11 +92,12 @@ done
 echo "Derived en-us, en-gb, en-001 for $count topics."
 
 count=0
-for cygb_dir in locales/cy-gb/topics/*/; do
+cy_topics="pynciau"  # Welsh for "topics": non-English locales translate this segment
+for cygb_dir in locales/cy-gb/$cy_topics/*/; do
   slug=$(basename "$cygb_dir")
   src="$cygb_dir/index.md"
   [ -f "$src" ] || continue
-  dst_dir="locales/cy-001/topics/$slug"
+  dst_dir="locales/cy-001/$cy_topics/$slug"
   mkdir -p "$dst_dir"
   cp "$src" "$dst_dir/index.md"
   count=$((count + 1))
@@ -103,11 +105,12 @@ done
 echo "Derived cy-001 (copy of cy-gb) for $count topics."
 
 count=0
-for zhcn_dir in locales/zh-001/topics/*/; do
+zh_topics="主题"  # Chinese for "topics"
+for zhcn_dir in locales/zh-001/$zh_topics/*/; do
   slug=$(basename "$zhcn_dir")
   src="$zhcn_dir/index.md"
   [ -f "$src" ] || continue
-  dst_dir="locales/zh-cn/topics/$slug"
+  dst_dir="locales/zh-cn/$zh_topics/$slug"
   mkdir -p "$dst_dir"
   cp "$src" "$dst_dir/index.md"
   count=$((count + 1))

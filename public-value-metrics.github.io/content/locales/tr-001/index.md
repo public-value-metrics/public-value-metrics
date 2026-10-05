@@ -2,7 +2,7 @@
 
 Kamu değeri matematiğine, örneklerine ve akıl yürütmesine kapsamlı bir giriş; dünya genelinde hükümet ve sosyal sektör kuruluşları için geliştirme yapan yazılım mühendisleri için yazılmıştır. Her dosya bir metriği veya kavramı ele alır: tanım, neden önemli olduğu, yöntem, çalışılmış örnek, yazılım mühendisliği bağlantısı, tuzaklar ve kaynaklar.
 
-Burada yeni misiniz? [Kamu değeri](locales/tr-001/topics/public-value/), [paranın karşılığı](locales/tr-001/topics/value-for-money/) ve [değişim kuramı](locales/tr-001/topics/theory-of-change/) ile başlayın — geri kalan her şeyin üzerine kurulduğu üç fikir.
+Burada yeni misiniz? [Kamu değeri](locales/tr-001/topics/kamu-değeri/), [paranın karşılığı](locales/tr-001/topics/paranın-karşılığı/) ve [değişim kuramı](locales/tr-001/topics/değişim-kuramı/) ile başlayın — geri kalan her şeyin üzerine kurulduğu üç fikir.
 
 ## Kamu değeri temelleri
 

@@ -45,7 +45,7 @@ Then:
 
 Each locale is `locales/<code>/` in the book repo, containing:
 
-- `locales/<code>/topics/<slug>/index.md` + `.locale-peer-id` — one per topic.
+- `locales/<code>/topics/<slug>/index.md` + `.locale-peer-id` — one per topic. In this repo the English locales use these exact names; every other locale translates both `topics` and the slug (the site's sync step maps them back to `topics/`).
   `README.md` is a symlink to `index.md`.
 - `locales/<code>/index.md` + `.locale-peer-id` + `README.md` symlink — the
   locale's own translated README (site home/contents page source). Every

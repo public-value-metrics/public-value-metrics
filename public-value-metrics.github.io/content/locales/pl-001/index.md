@@ -2,7 +2,7 @@
 
 Kompleksowe wprowadzenie do matematyki, przykładów i rozumowania wartości publicznej, napisane dla inżynierów oprogramowania budujących rozwiązania dla organizacji rządowych i sektora społecznego na całym świecie. Każdy plik obejmuje jedną metrykę lub pojęcie: definicję, dlaczego jest ważna, metodę, przykład obliczeniowy, związek z inżynierią oprogramowania, pułapki i źródła.
 
-Jesteś tu nowy? Zacznij od [wartości publicznej](locales/pl-001/topics/public-value/), [wartości za pieniądze](locales/pl-001/topics/value-for-money/) i [teorii zmiany](locales/pl-001/topics/theory-of-change/) — trzech idei, na których opiera się wszystko inne.
+Jesteś tu nowy? Zacznij od [wartości publicznej](locales/pl-001/topics/wartość-publiczna/), [wartości za pieniądze](locales/pl-001/topics/wartość-za-pieniądze/) i [teorii zmiany](locales/pl-001/topics/teoria-zmiany/) — trzech idei, na których opiera się wszystko inne.
 
 ## Podstawy wartości publicznej
 

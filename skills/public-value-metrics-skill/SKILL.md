@@ -20,7 +20,7 @@ and known pitfalls that generic knowledge gets wrong.
    business case / argument?
 2. **Find the topic(s).** Scan `README.md` — it's a categorized index with a one-line hook per
    topic — to identify the most relevant file(s) in `locales/en-gb-oxendict/topics/` (the default
-   locale; the same 64 topics also exist translated under `locales/<other-locale>/topics/`). Read
+   locale; the same 64 topics also exist translated under `locales/<other-locale>/<translated topics directory>/`, with translated slugs). Read
    the full file(s), not just the README hook line.
 3. **Follow cross-links.** Topic files link to related topics inline via `../<slug>/` (e.g.
    `social-return-on-investment/index.md` links to `../theory-of-change/` and

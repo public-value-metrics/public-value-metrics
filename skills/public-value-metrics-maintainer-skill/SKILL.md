@@ -59,15 +59,17 @@ independently authored four times:
 
 `cy-gb` and `cy-001` are a genuine Welsh translation of `en-gb-oxendict` — full prose, not a
 mechanical transform — and are text-identical to each other in this repo (Welsh has no equivalent
-of the World-vs-regional English split). Both keep the **English** (`en-gb-oxendict`) slug for
-every topic directory — only the content is translated, never the directory name.
+of the World-vs-regional English split). Both translate the `topics/` directory name (`pynciau/`)
+and every topic slug into Welsh, and use identical names.
 
 The ten further "World" locales (`zh-001`, `hi-001`, `ar-001`, `es-001`, `fr-001`, `ru-001`,
 `bn-001`, `pt-001`, `id-001`, `ur-001`) are each a genuine, independent full-language translation of
-`en-gb-oxendict`, following the same rule as Welsh: they keep the **English** (`en-gb-oxendict`)
-slug for every topic directory — only the content is translated, never the directory name — so
-that cross-links (`../<slug>/`) never need locale-specific handling except for the `-ize`/`-ise`
-English dialect split described above. None of these has a regional variant beyond `zh-cn` (no
+`en-gb-oxendict`, following the same rule as Welsh: they translate the `topics/` directory name and every
+topic slug into the locale's own language and script (e.g. `locales/cs-001/témata/veřejná-hodnota/`),
+and cross-links (`../<slug>/`) use that locale's own translated slugs. A new topic's slug is
+derived from its translated H1 title: drop any parenthetical, lower-case, and replace every run of
+non-letter/mark/digit characters with a hyphen, keeping native script. The topic's
+`.locale-peer-id` is what ties the translated slugs together. None of these has a regional variant beyond `zh-cn` (no
 `es-es`, `ar-eg`, etc.) — just the single "World" form per language, matching the locale table the
 project maintainer specified.
 
@@ -94,8 +96,8 @@ A topic whose slug contains an `-ize`/`-ise` family word is spelled per the same
 prose: e.g. the topic at `locales/en-gb-oxendict/topics/benefits-realization/` and
 `locales/en-us/topics/benefits-realization/` is the same topic as
 `locales/en-gb/topics/benefits-realisation/` and `locales/en-001/topics/benefits-realisation/` —
-same `.locale-peer-id`, different slug. The two Welsh locales keep the *English* (`en-gb-oxendict`)
-slug for every topic — only the content is translated, never the directory name.
+same `.locale-peer-id`, different slug. The two Welsh locales use translated directory names
+(`pynciau/` and Welsh slugs), so their slugs differ from every English locale too.
 
 ## Adding a new topic
 
