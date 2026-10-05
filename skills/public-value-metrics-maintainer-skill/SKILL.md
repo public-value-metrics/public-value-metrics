@@ -162,17 +162,17 @@ slug for every topic — only the content is translated, never the directory nam
    now, that's fine, but say so rather than leaving other locales silently out of sync.
 
 4. **Update `README.md`** (links into `locales/en-gb-oxendict/topics/`, the default locale):
-   - Add one bullet to the correct chapter section:
+   - Add one bullet to the correct part:
      `- [Title](locales/en-gb-oxendict/topics/new-slug/) — one-line hook`. The hook is a punchy,
      specific description (often "X — Y" format), not a restatement of the title. Titles use
      sentence case with acronyms capitalized (e.g. "Social return on investment (SROI)"), not
      Title Case.
    - Keep bullets in the section's existing order (usually foundational → specific, or the
-     order the chapter's narrative builds in) rather than strictly alphabetical — check the
+     order the part's narrative builds in) rather than strictly alphabetical — check the
      surrounding bullets before deciding where to insert.
    - If the new topic is foundational (something several other topics will depend on), consider
      whether it belongs in the "New here?" sentence at the top.
-   - Do not create a new chapter section for one topic unless it genuinely doesn't fit any of the
+   - Do not create a new part for one topic unless it genuinely doesn't fit any of the
      8 existing ones (Public value foundations, Governmental economic appraisal, Social value and
      impact measurement, Governmental performance and delivery metrics, Social sector and
      philanthropy metrics, Public value in digital government, Wellbeing equity and societal
@@ -195,7 +195,7 @@ slug for every topic — only the content is translated, never the directory nam
   finishing, in every locale that uses that slug — remember slugs can legitimately differ by
   locale (see above), so don't assume a rename in one locale applies to all of them.
 - If you change what a file covers substantially, re-check whether its README hook line and its
-  chapter placement still fit.
+  part placement still fit.
 - Never touch `.locale-peer-id` when editing content — it identifies the topic across locales,
   not a particular translation's freshness.
 
