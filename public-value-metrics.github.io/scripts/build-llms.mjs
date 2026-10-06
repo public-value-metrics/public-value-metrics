@@ -1,10 +1,10 @@
-// Builds build/llms.txt and build/llms.json: a machine-readable map of the book for AI agents.
+// Writes llms.txt and llms.json into each directory given (default: build): a machine-readable map of the book for AI agents.
 // Source of truth is content/README.md (parts + topics, in reading order) and content/locales/.
 // See https://llmstxt.org/ for the llms.txt format.
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const BUILD = process.argv[2] ?? 'build';
+const OUT_DIRS = process.argv.length > 2 ? process.argv.slice(2) : ['build'];
 const SITE = 'https://public-value-metrics.github.io';
 const REPO = 'https://github.com/public-value-metrics/public-value-metrics';
 const DEFAULT = 'en-gb-oxendict';
@@ -42,10 +42,13 @@ const txt = [
 	`- [Source repository](${REPO}): Markdown, specs, maintainer skills`, ''
 ].join('\n');
 
-writeFileSync(join(BUILD, 'llms.txt'), txt);
-writeFileSync(join(BUILD, 'llms.json'), JSON.stringify({
+const json = JSON.stringify({
 	title, summary, site: SITE, repository: REPO, defaultLocale: DEFAULT, locales,
 	topicUrlPattern: `${SITE}/<locale>/topics/<slug>/`,
 	parts: bookParts
-}, null, 2) + '\n');
+}, null, 2) + '\n';
+for (const dir of OUT_DIRS) {
+	writeFileSync(join(dir, 'llms.txt'), txt);
+	writeFileSync(join(dir, 'llms.json'), json);
+}
 console.log(`llms: ${topicCount} topics, ${locales.length} locales`);

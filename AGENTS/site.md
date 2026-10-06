@@ -19,7 +19,8 @@ what an agent needs.
 ## Build outputs
 
 `pnpm run build` = `vite build` + `scripts/build-search-index.mjs` (`search-index.json`) +
-`scripts/build-llms.mjs` (`llms.txt`, `llms.json`; spec: `spec/llms/`). Home-page counts come from content.
+`scripts/build-llms.mjs` (`llms.txt`, `llms.json`; spec: `spec/llms/`; sync also commits copies at the repo root and in `static/`) +
+`scripts/build-sitemap.mjs` (`sitemap.xml`; spec: `spec/sitemap/`). Home-page counts come from content.
 
 ## Rules
 

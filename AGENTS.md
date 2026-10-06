@@ -58,7 +58,7 @@ sh bin/derive-locales             # regenerate derived locales (idempotent)
 cd public-value-metrics.github.io
 pnpm install                      # postinstall copies Lily theme CSS into static/
 pnpm run sync                     # book -> content/
-pnpm run build                    # vite build + search index + llms.txt/llms.json -> build/
+pnpm run build                    # vite build + search index + llms.txt/llms.json + sitemap.xml -> build/
 ```
 
 Before committing locale work: `sh bin/test`, sync, `pnpm run build`, and check that every relative link
@@ -89,3 +89,4 @@ trailer your harness specifies. Push to `origin` (GitHub, Codeberg and GitLab) o
 - `spec/contents-for-global-sharing-with-svelte/`: contents page rules
 - `spec/search/`: search index
 - `spec/llms/`: llms.txt and llms.json
+- `spec/sitemap/`: sitemap.xml and robots.txt

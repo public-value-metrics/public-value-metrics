@@ -14,6 +14,7 @@
 
 import { cp, mkdir, rm, readdir, stat, readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -143,6 +144,10 @@ for (const [from, to] of icons) {
 	await cp(src, join(siteRoot, 'static', to));
 	count += 1;
 }
+
+// llms.txt / llms.json: written to static/ (served by the site) and to the book's root (committed
+// beside README.md), both generated from the content just vendored. See spec/llms/index.md.
+execFileSync(process.execPath, ['scripts/build-llms.mjs', join(siteRoot, 'static'), book], { cwd: siteRoot, stdio: 'inherit' });
 
 const { size } = await stat(join(contentDir, 'README.md'));
 console.log(
