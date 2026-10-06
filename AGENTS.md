@@ -5,7 +5,7 @@ under 40 KB; the details live in `spec/`, `skills/`, and `README.md`, and this f
 
 ## What this repo is
 
-*Public Value Metrics*: 64 topics on public-value maths for software engineers, published in 47
+*Public Value Metrics*: 64 topics on public-value maths for software engineers, published in 48
 locales, plus the SvelteKit site that publishes them.
 
 ```

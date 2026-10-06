@@ -1,6 +1,6 @@
 # Translating topics
 
-Rules for translating a topic file into another locale. They were applied to all 43 non-English locales,
+Rules for translating a topic file into another locale. They were applied to all 44 non-English locales,
 so follow them for consistency.
 
 ## Keep
