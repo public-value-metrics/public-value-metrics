@@ -203,7 +203,7 @@ same `.locale-peer-id`, different slug. The two Welsh locales use translated dir
 
 ```bash
 # bin/test checks locale directories exist, every topic subdirectory has .locale-peer-id,
-# index.md, and a README.md symlink, and peer-id counts match across all 6 locales:
+# index.md, and a README.md symlink, and peer-id counts match across every locale, every locale has a non-empty index.md, and every relative link resolves (bin/check-links):
 bin/test
 
 # Every locales/en-gb-oxendict/topics/*/ directory is linked from README.md, and vice versa

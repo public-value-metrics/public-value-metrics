@@ -3,7 +3,8 @@ set -euf
 
 ## https://github.com/sixarm/unix-shell-script-kit
 
-err() { >&2 printf %s\\n "Error: ${*}"; }
+failed=0
+err() { failed=1; >&2 printf %s\\n "Error: ${*}"; }
 
 directory_exists_or_err() { test -d "$1" || err "Directory should exist: $1"; }
 file_exists_or_err() { test -f "$1" || err "File should exist: $1"; }
@@ -48,7 +49,7 @@ test_locales_subdirectories() {
 
 test_locale_peer_id_counts_match() {
     reference=""
-    for loc in en-001 en-us en-gb en-gb-oxendict cy-001 cy-gb zh-001 zh-cn hi-001 ar-001 es-001 fr-001 ru-001 bn-001 pt-001 id-001 ur-001; do
+    for loc in $(ls "$top/locales"); do
         count=$(find "$top/locales/$loc" -name .locale-peer-id -mindepth 3 | wc -l | tr -d ' ')
         if [ -z "$reference" ]; then
             reference="$count"
@@ -58,10 +59,25 @@ test_locale_peer_id_counts_match() {
     done
 }
 
+test_locale_index_files() {
+    for loc in $(ls "$top/locales"); do
+        # en-gb-oxendict's index.md is an intentional empty placeholder: the root README.md is its contents page.
+        [ "$loc" = en-gb-oxendict ] && continue
+        file_size_or_err "$top/locales/$loc/index.md"
+    done
+}
+
+test_links() {
+    node "$top/bin/check-links" || err "broken links (see above)"
+}
+
 main() {
     test_locales
     test_locales_subdirectories
     test_locale_peer_id_counts_match
+    test_locale_index_files
+    test_links
 }
 
 main
+exit "$failed"

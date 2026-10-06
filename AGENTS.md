@@ -18,6 +18,14 @@ skills/                           agent skills: public-value-metrics-skill (use 
 public-value-metrics.github.io/   SvelteKit + adapter-static + Lily Design System site, deployed by GitHub Pages
 ```
 
+## Detailed guides
+
+- `AGENTS/topics.md`: topic file structure, conventions, adding and editing topics
+- `AGENTS/locales.md`: locale kinds, the translated-path convention, adding a locale
+- `AGENTS/translation.md`: what to keep and translate, quality pass
+- `AGENTS/site.md`: data flow, build outputs, site rules, dependencies
+- `AGENTS/workflow.md`: pre-commit checks, specs as source of truth, doc upkeep, git
+
 ## Rules that are easy to get wrong
 
 1. **Canonical content is `locales/en-gb-oxendict/topics/<slug>/index.md`.** `en-gb`, `en-001` and
@@ -43,7 +51,9 @@ public-value-metrics.github.io/   SvelteKit + adapter-static + Lily Design Syste
 ## Commands
 
 ```sh
-sh bin/test                       # structure checks: every topic has index.md, .locale-peer-id, README.md symlink; peer-id counts match
+sh bin/test                       # structure checks (every locale), link check; exits 1 on failure
+bin/check-links                   # relative-link check on its own
+bin/translate-paths [--apply] [locale...]   # translate topics dir + slugs of non-English locales
 sh bin/derive-locales             # regenerate derived locales (idempotent)
 cd public-value-metrics.github.io
 pnpm install                      # postinstall copies Lily theme CSS into static/

@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+// check-links: verify every relative link in every locale's index.md and topic index.md resolves.
+// Handles `../<slug>/` (relative to the file) and `locales/<code>/...` (relative to the repo root).
+// Exits 1 and lists the first broken links if any are broken. Run from anywhere inside the repo.
+import { readdirSync, readFileSync, existsSync } from 'node:fs';
+import { join, resolve, dirname } from 'node:path';
+import { execSync } from 'node:child_process';
+
+const top = execSync('git rev-parse --show-toplevel', { encoding: 'utf8' }).trim();
+const L = join(top, 'locales');
+let bad = 0, n = 0;
+for (const loc of readdirSync(L)) {
+	const d = join(L, loc);
+	if (!existsSync(join(d, 'index.md'))) continue;
+	const files = [join(d, 'index.md')];
+	for (const s of readdirSync(d, { withFileTypes: true }))
+		if (s.isDirectory())
+			for (const t of readdirSync(join(d, s.name), { withFileTypes: true }))
+				if (t.isDirectory() && existsSync(join(d, s.name, t.name, 'index.md'))) files.push(join(d, s.name, t.name, 'index.md'));
+	for (const f of files) {
+		const txt = readFileSync(f, 'utf8');
+		for (const m of txt.matchAll(/\]\(([^)\s#]+)(?:#[^)]*)?\)/g)) {
+			const href = m[1];
+			if (/^(https?:|mailto:)/.test(href)) continue;
+			const target = href.startsWith('locales/') ? join(top, href) : resolve(dirname(f), href);
+			n++;
+			if (!existsSync(target)) { bad++; if (bad <= 15) console.error(`BROKEN ${f.slice(top.length + 1)} -> ${href}`); }
+		}
+	}
+}
+console.log(`${n} links checked, ${bad} broken`);
+process.exit(bad ? 1 : 0);

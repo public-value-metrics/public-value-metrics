@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+// translate-paths: translate directory path segments in non-English locales.
+// For each locale still using `topics/` + English slugs, rename `topics/` to the language's word for
+// "topics" and each topic slug to a slug derived from its translated H1, and rewrite the relative
+// `../<slug>/` links and the locale index's `locales/<code>/topics/<slug>/` intro links to match.
+// Rules are documented in AGENTS/locales.md. English locales (en-*) are never touched.
+//
+// Usage (from anywhere in the repo):
+//   bin/translate-paths [locale ...]            dry run: show what would change
+//   bin/translate-paths --apply [locale ...]    do it
+// A new language needs an entry in TOPICS below.
+// Translate directory path segments (topics/ and each topic slug) in every
+// non-English locale, rewriting the relative links that point at them.
+// Usage: node translate-paths.mjs [--apply] [locale ...]
+import { readdirSync, readFileSync, writeFileSync, renameSync, existsSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+
+import { execSync } from 'node:child_process';
+const root = execSync('git rev-parse --show-toplevel', { encoding: 'utf8' }).trim();
+const localesDir = join(root, 'locales');
+const apply = process.argv.includes('--apply');
+const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
+
+// "topics" per language, as a URL-safe-ish native segment.
+const TOPICS = {
+	ar: 'المواضيع', bn: 'বিষয়সমূহ', cs: 'témata', cy: 'pynciau', da: 'emner', de: 'themen',
+	es: 'temas', et: 'teemad', fr: 'sujets', hi: 'विषय', id: 'topik', it: 'argomenti',
+	ja: 'トピック', ko: '주제', nl: 'onderwerpen', pl: 'tematy', pt: 'tópicos', ro: 'subiecte', ru: 'темы',
+	sv: 'ämnen', tr: 'konular', uk: 'теми', ur: 'موضوعات', vi: 'chủ-đề', zh: '主题'
+};
+
+function slugify(title, lang) {
+	let s = title.normalize('NFC');
+	s = s.replace(/\s*[（(][^)）]*[)）]/g, ''); // drop "(VFM)"-style parentheticals
+	s = s.replace(/['’‘"“”„«»「」『』]/g, '');
+	if (lang === 'tr') s = s.replace(/İ/g, 'i').replace(/I/g, 'ı');
+	s = s.toLocaleLowerCase(lang);
+	s = s.replace(/[^\p{L}\p{M}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '');
+	return s.normalize('NFC');
+}
+
+const locales = readdirSync(localesDir, { withFileTypes: true })
+	.filter((e) => e.isDirectory() && !e.name.startsWith('en-'))
+	.map((e) => e.name)
+	.filter((l) => only.length === 0 || only.includes(l))
+	.sort();
+
+let problems = 0;
+for (const loc of locales) {
+	const lang = loc.split('-')[0];
+	const seg = TOPICS[lang];
+	if (!seg) { console.error(`no topics word for ${lang}`); problems++; continue; }
+	const oldTopics = join(localesDir, loc, 'topics');
+	if (!existsSync(oldTopics)) { console.log(`${loc}: already converted or no topics/`); continue; }
+
+	const map = new Map(); // old slug -> new slug
+	const used = new Map();
+	for (const e of readdirSync(oldTopics, { withFileTypes: true })) {
+		if (!e.isDirectory()) continue;
+		const md = readFileSync(join(oldTopics, e.name, 'index.md'), 'utf8');
+		const h1 = /^#\s+(.+)$/m.exec(md)?.[1] ?? e.name;
+		let ns = slugify(h1, lang) || e.name;
+		if (used.has(ns)) { console.error(`${loc}: collision ${ns}: ${used.get(ns)} vs ${e.name}`); problems++; ns = `${ns}-${e.name}`; }
+		used.set(ns, e.name);
+		map.set(e.name, ns);
+	}
+	if (!apply) {
+		console.log(`${loc} -> ${seg}/ (${map.size})`);
+		if (only.length) for (const [o, n] of map) console.log(`  ${o} -> ${n}`);
+		continue;
+	}
+
+	const rewriteLinks = (text, inTopic) => {
+		if (inTopic) {
+			// ](../old/), ](../old/index.md), ](../old), optionally with #anchor
+			text = text.replace(/\]\(\.\.\/([^/)#\s]+)((?:\/[^)#\s]*)?(?:#[^)\s]*)?)\)/g, (m, slug, rest) =>
+				map.has(slug) ? `](../${map.get(slug)}${rest})` : m);
+		}
+		// locale root index: locales/<loc>/topics/<old>/
+		const re = new RegExp(`locales/${loc}/topics/([^/)\\s]+)/`, 'g');
+		return text.replace(re, (m, slug) => (map.has(slug) ? `locales/${loc}/${seg}/${map.get(slug)}/` : m));
+	};
+
+	for (const [o] of map) {
+		const f = join(oldTopics, o, 'index.md');
+		const before = readFileSync(f, 'utf8');
+		const after = rewriteLinks(before, true);
+		if (after !== before) writeFileSync(f, after);
+	}
+	const idx = join(localesDir, loc, 'index.md');
+	if (existsSync(idx) && !statSync(idx).isSymbolicLink()) {
+		const before = readFileSync(idx, 'utf8');
+		const after = rewriteLinks(before, false);
+		if (after !== before) writeFileSync(idx, after);
+	}
+	// rename slug dirs, then the topics dir
+	for (const [o, n] of map) if (o !== n) renameSync(join(oldTopics, o), join(oldTopics, n));
+	renameSync(oldTopics, join(localesDir, loc, seg));
+	console.log(`${loc}: renamed topics/ -> ${seg}/ and ${map.size} slugs`);
+}
+if (problems) console.error(`${problems} problem(s)`);
