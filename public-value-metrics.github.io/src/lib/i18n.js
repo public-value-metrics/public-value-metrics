@@ -1260,6 +1260,54 @@ const ro = {
 	paginationNext: 'Următorul'
 };
 
+const hu = {
+	skipToContent: 'Ugrás a tartalomra',
+	navHome: 'Kezdőlap',
+	navContents: 'Tartalom',
+	navTopicsAZ: 'Témák A–Z',
+	navSearch: 'Keresés',
+	navAbout: 'A könyvről',
+	footerSourceLink: 'Forrás',
+	footerTaglineSuffix:
+		' — a közérték matematikája, példái és gondolatmenete kormányzati és társadalmi szektorbeli szervezetek számára építő szoftvermérnököknek világszerte.',
+	footerNote:
+		'A könyv számai gyorsan elavulnak. Minden téma a szövegben keltezi a viszonyítási adatait; egy valódi üzleti esetben bármely szám használata előtt ellenőrizze újra őket.',
+	pickerTheme: 'Téma',
+	pickerLanguage: 'Nyelv',
+	pickerTextSize: 'Szövegméret',
+	pickerShare: 'Megosztás',
+	shareCopyLink: 'Hivatkozás másolása',
+	shareCopied: 'Átmásolva',
+	shareCopyFailed: 'A másolás nem sikerült',
+	shareEmailLabel: 'Hivatkozás küldése e-mailben',
+	shareLinkedinLabel: 'Megosztás a LinkedIn-en',
+	shareRedditLabel: 'Megosztás a Redditen',
+	shareBlueskyLabel: 'Megosztás a Bluesky-on',
+	shareMastodonLabel: 'Megosztás a Mastodonon',
+	startHere: 'Kezdje itt',
+	startHereSubtitle: 'Három gondolat, amelyre minden más épül.',
+	contentsMetaDescription: (bookTitle) => `A(z) „${bookTitle}” minden témája olvasási sorrendben.`,
+	topicsMetaDescription: (bookTitle) => `A(z) „${bookTitle}” minden témája betűrendben.`,
+	topicsIntroPrefix: (count) => `Összesen ${count} téma betűrendben. Az olvasási sorrendért lásd:`,
+	contentsLinkText: 'tartalom',
+	jumpToLetter: 'Ugrás a betűhöz',
+	searchMetaDescription: (bookTitle) => `Keresés a(z) „${bookTitle}” minden témájában.`,
+	searchIntro: (count) =>
+		`Keressen az összes (${count}) téma között cím, rész, összefoglaló és szakaszcímek alapján. Minden a böngészőjében fut — semmi, amit begépel, nem hagyja el ezt az oldalt.`,
+	searchInputLabel: 'Témák keresése',
+	searchPlaceholder: 'SROI, diszkontálás, költség eredményenként…',
+	searchHintEmptyHtml: 'Gépeljen a kereséshez. Próbálja ki: <em>SROI</em>, <em>holtteher</em> vagy <em>érték a pénzért</em>.',
+	noResultsPrefix: 'Egyetlen téma sem felel meg ennek: ',
+	noResultsMiddle: '. Próbáljon tágabb kifejezést, vagy böngésszen: ',
+	resultsCountSingular: 'téma',
+	resultsCountPlural: 'téma',
+	topicPosition: (index, total) => `${index}. téma ${total} közül`,
+	onThisPage: 'Ezen az oldalon',
+	paginationLabel: 'Könyv',
+	paginationPrevious: 'Előző',
+	paginationNext: 'Következő'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
@@ -1270,6 +1318,7 @@ const TRANSLATIONS = {
 	'uk-001': uk,
 	'cs-001': cs,
 	'ro-001': ro,
+	'hu-001': hu,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,

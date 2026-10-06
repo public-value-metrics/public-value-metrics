@@ -24,7 +24,7 @@ const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 // "topics" per language, as a URL-safe-ish native segment.
 const TOPICS = {
 	ar: 'المواضيع', bn: 'বিষয়সমূহ', cs: 'témata', cy: 'pynciau', da: 'emner', de: 'themen',
-	es: 'temas', et: 'teemad', fr: 'sujets', hi: 'विषय', id: 'topik', it: 'argomenti',
+	es: 'temas', et: 'teemad', fr: 'sujets', hi: 'विषय', hu: 'témák', id: 'topik', it: 'argomenti',
 	ja: 'トピック', ko: '주제', nl: 'onderwerpen', pl: 'tematy', pt: 'tópicos', ro: 'subiecte', ru: 'темы',
 	sv: 'ämnen', tr: 'konular', uk: 'теми', ur: 'موضوعات', vi: 'chủ-đề', zh: '主题'
 };
