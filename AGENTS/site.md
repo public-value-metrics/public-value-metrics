@@ -32,3 +32,7 @@ what an agent needs.
 - `base` path is empty (the repo is `<org>.github.io`); leave `BASE_PATH` unset.
 - Dependencies: `pnpm update --latest`. pnpm 11's release-age gate delays brand-new releases; leave it.
   `typescript` stays on 6.x while `@sveltejs/kit` peers `^6`. Always rebuild after upgrading.
+
+## Locale picker and the URL
+
+The URL is the source of truth for the locale. The Lily locale picker fires `onChange` both when a reader picks a language and when it merely follows the URL (a link, Back/Forward, a direct load); `navigateToLocale` in `src/routes/+layout.svelte` ignores a change whose code already matches the address bar's first path segment, so following the URL never navigates away. A saved locale only applies on locale-less pages (`/`, `/about/`).
