@@ -3,17 +3,22 @@
 Status of `spec/locales-for-global-sharing-with-svelte/` for this repo, updated when that spec is
 implemented or re-verified here.
 
-## Locales (17)
+## Locales (45)
 
-All 15 locales listed in `spec/locales-for-global-sharing-with-svelte/locales.tsv` exist and are
-verified, plus two extras this repo already had before that spec arrived (kept, not removed, since
-the spec doesn't say to prune):
+The canonical locale is `en-gb-oxendict`. Derived English locales: `en-gb`, `en-001`, `en-us`
+(`bin/derive-locales`). Every other locale is an AI translation (not yet reviewed by a fluent
+speaker); the full list with names is the "Locales" section of `README.md`, and the 15 locales of
+`spec/locales-for-global-sharing-with-svelte/locales.tsv` are all present.
 
-- `ar-001`, `bn-001`, `cy-001`, `en-001`, `en-gb`, `en-gb-oxendict`, `en-us`, `es-001`, `fr-001`,
-  `hi-001`, `id-001`, `pt-001`, `ru-001`, `ur-001` — from `locales.tsv`, pre-existing.
-- `zh-cn` — from `locales.tsv`, added by this pass. Derived as a byte-for-byte copy of `zh-001`
-  (see "zh-cn" below), not an independently-authored translation.
-- `cy-gb`, `zh-001` — not in `locales.tsv`, kept from before this spec arrived.
+## Path convention
+
+English locales use `locales/<code>/topics/<english-slug>/`. Every other locale translates **both**
+the `topics` directory name (for example `témata`, `トピック`, `subiecte`) and each topic slug into its
+own language and script, derived from the translated H1: drop parentheticals, lower-case, replace
+runs of non-letter/mark/digit characters with a hyphen, keep native script. Relative links
+(`../<slug>/`) and index links use the locale's own names; `.locale-peer-id` links the same topic
+across locales. The site's sync step maps each translated topics directory back to `topics/` so
+routes stay `/<locale>/topics/<slug>/`.
 
 ## What this pass did
 

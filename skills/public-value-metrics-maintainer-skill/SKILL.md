@@ -5,26 +5,22 @@ description: Maintain this repository — add or edit a topic file under locales
 
 # Maintaining public-value-metrics
 
-This repo's reference docs live under `locales/<locale>/topics/<slug>/`, one directory per topic,
-for each of 40 locales: `en-gb-oxendict` (the canonical/default locale that `README.md` and the
-skills link into), `en-001`, `en-us`, `en-gb`, two Welsh locales (`cy-gb`, `cy-001`), ten
-"World" full-language translations — `zh-001` (Chinese, World), `zh-cn` (Chinese, China; see
-below), `hi-001` (Hindi), `ar-001` (Arabic), `es-001` (Spanish), `fr-001` (French), `ru-001`
-(Russian), `bn-001` (Bengali), `pt-001` (Portuguese), `id-001` (Indonesian), `ur-001` (Urdu) —
-nine full-language translations, `de-de` (German, Germany), `ja-jp` (Japanese, Japan), `ko-kr`
-(Korean, Korea), `sv-se` (Swedish, Sweden), `nl-nl` (Dutch, Netherlands), `vi-001`
-(Vietnamese, World — no country-specific variant requested, so this one is itself a direct,
-from-scratch World translation, not a mirror), `da-001` (Danish, World — likewise a direct,
-from-scratch World translation, not a mirror), `et-001` (Estonian, World — likewise a direct,
-from-scratch World translation, not a mirror), and `it-001` (Italian, World — likewise a direct,
-from-scratch World translation, not a mirror), and fourteen locales that are content-identical to
-a counterpart (same reasoning as `zh-cn`/`zh-001`): nine country-specific locales — `ar-eg`
-(Egypt), `bn-bd` (Bangladesh), `hi-in` (India), `es-es` (Spain), `fr-fr` (France), `ru-ru`
-(Russia), `pt-pt` (Portugal), `ur-pk` (Pakistan), `id-id` (Indonesia) — and five World variants of
-a full-language translation, `ja-001` (Japanese, World; content-identical to `ja-jp`), `de-001`
-(German, World; content-identical to `de-de`), `sv-001` (Swedish, World; content-identical to
-`sv-se`), `ko-001` (Korean, World; content-identical to `ko-kr`), and `nl-001` (Dutch, World;
-content-identical to `nl-nl`). Every topic directory contains:
+This repo's reference docs live under `locales/<locale>/<topics dir>/<slug>/`, one directory per
+topic, for each of 45 locales (the list is in `README.md`'s "Locales" section; `spec/locale/index.md`
+records the decisions behind it):
+
+- `en-gb-oxendict` — the canonical/default locale that `README.md` and the skills link into.
+- `en-001`, `en-us`, `en-gb` — mechanically derived from it by `bin/derive-locales`.
+- Independently translated "World" locales (`xx-001`): `cy`, `zh`, `hi`, `ar`, `es`, `fr`, `ru`, `bn`,
+  `pt`, `id`, `ur`, `vi`, `da`, `et`, `it`, `tr`, `pl`, `uk`, `cs`, `ro` and, as `-001` variants of a
+  country locale, `ja`, `de`, `sv`, `ko`, `nl`.
+- Country locales: `cy-gb`, `zh-cn`, `de-de`, `ja-jp`, `ko-kr`, `sv-se`, `nl-nl`, `ar-eg`, `bn-bd`,
+  `hi-in`, `es-es`, `fr-fr`, `ru-ru`, `pt-pt`, `ur-pk`, `id-id`. Most are content-identical to their
+  language's World locale (same reasoning as `zh-cn`/`zh-001`); `cy-001` is copied from `cy-gb` and
+  `zh-cn` from `zh-001` by `bin/derive-locales`.
+
+English locales use `topics/` and English slugs; every other locale translates the directory name
+and each slug (see "Slugs can differ by locale"). Every topic directory contains:
 
 - `index.md` — the actual content
 - `README.md` — a real symlink to `index.md` (`ln -s index.md README.md`), so the directory
@@ -36,8 +32,11 @@ content-identical to `nl-nl`). Every topic directory contains:
   locale's version of an existing topic, and never let two different topics share one. See
   [locale-help](https://github.com/SixArm/locale-help) for the full spec this convention follows.
 
-There is no build step, no CI — consistency is entirely convention-based, so following the
-existing pattern precisely (across all 40 locales, not just one) is the whole job.
+Consistency is convention-based plus two checks: `sh bin/test` (structure and peer-id counts) and the
+site build (`public-value-metrics.github.io`, `pnpm run build`, which also fails on broken
+cross-locale links). Follow the existing pattern precisely across all 45 locales, not just one.
+When translating a whole locale, translate every topic yourself, one after another — never with
+subagents.
 
 ## The locale relationships (this repo's specific dialect map)
 
@@ -62,8 +61,7 @@ mechanical transform — and are text-identical to each other in this repo (Wels
 of the World-vs-regional English split). Both translate the `topics/` directory name (`pynciau/`)
 and every topic slug into Welsh, and use identical names.
 
-The ten further "World" locales (`zh-001`, `hi-001`, `ar-001`, `es-001`, `fr-001`, `ru-001`,
-`bn-001`, `pt-001`, `id-001`, `ur-001`) are each a genuine, independent full-language translation of
+The other full-language locales (every `xx-001` above except `cy-001`) are each a genuine, independent full-language translation of
 `en-gb-oxendict`, following the same rule as Welsh: they translate the `topics/` directory name and every
 topic slug into the locale's own language and script (e.g. `locales/cs-001/témata/veřejná-hodnota/`),
 and cross-links (`../<slug>/`) use that locale's own translated slugs. A new topic's slug is
