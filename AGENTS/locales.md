@@ -1,6 +1,6 @@
 # Locales: structure, paths and adding one
 
-46 locales live under `locales/`. The list with names is the "Locales" section of `README.md`;
+47 locales live under `locales/`. The list with names is the "Locales" section of `README.md`;
 `spec/locale/index.md` records decisions; `spec/locales-for-global-sharing-with-svelte/locales.tsv` is the
 upstream baseline (all present).
 
@@ -19,7 +19,7 @@ upstream baseline (all present).
 - English locales: `locales/<code>/topics/<english-slug>/` (`en-gb`/`en-001` spell `-ise` slugs: `benefits-realisation`).
 - Every other locale: `locales/<code>/<translated topics word>/<translated slug>/`, e.g.
   `locales/cs-001/témata/veřejná-hodnota/`, `locales/ja-jp/トピック/…`, `locales/ro-001/subiecte/…`.
-- Slug derivation (implemented by `bin/translate-paths`, which produced all 42 non-English locales): take the translated H1,
+- Slug derivation (implemented by `bin/translate-paths`, which produced all 43 non-English locales): take the translated H1,
   drop parentheticals, strip quotation marks, lower-case (Turkish: `İ→i`, `I→ı`), replace every run of
   characters that are not letters, combining marks or digits with `-`, trim hyphens, NFC-normalise.
   Native script is kept; there is no transliteration.

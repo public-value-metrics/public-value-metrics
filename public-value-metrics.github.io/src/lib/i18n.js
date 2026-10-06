@@ -1308,6 +1308,54 @@ const hu = {
 	paginationNext: 'Következő'
 };
 
+const el = {
+	skipToContent: 'Μετάβαση στο περιεχόμενο',
+	navHome: 'Αρχική',
+	navContents: 'Περιεχόμενα',
+	navTopicsAZ: 'Θέματα Α–Ω',
+	navSearch: 'Αναζήτηση',
+	navAbout: 'Σχετικά με το βιβλίο',
+	footerSourceLink: 'Πηγή',
+	footerTaglineSuffix:
+		' — τα μαθηματικά, τα παραδείγματα και ο συλλογισμός της δημόσιας αξίας για μηχανικούς λογισμικού που χτίζουν λύσεις για κυβερνητικούς οργανισμούς και οργανισμούς του κοινωνικού τομέα σε όλο τον κόσμο.',
+	footerNote:
+		'Οι αριθμοί αυτού του βιβλίου παλιώνουν γρήγορα. Κάθε θέμα χρονολογεί τα στοιχεία αναφοράς του μέσα στο κείμενο· ελέγξτε τα ξανά πριν χρησιμοποιήσετε οποιονδήποτε αριθμό σε πραγματική επιχειρηματική περίπτωση.',
+	pickerTheme: 'Θέμα εμφάνισης',
+	pickerLanguage: 'Γλώσσα',
+	pickerTextSize: 'Μέγεθος κειμένου',
+	pickerShare: 'Κοινοποίηση',
+	shareCopyLink: 'Αντιγραφή συνδέσμου',
+	shareCopied: 'Αντιγράφηκε',
+	shareCopyFailed: 'Η αντιγραφή απέτυχε',
+	shareEmailLabel: 'Αποστολή συνδέσμου με email',
+	shareLinkedinLabel: 'Κοινοποίηση στο LinkedIn',
+	shareRedditLabel: 'Κοινοποίηση στο Reddit',
+	shareBlueskyLabel: 'Κοινοποίηση στο Bluesky',
+	shareMastodonLabel: 'Κοινοποίηση στο Mastodon',
+	startHere: 'Ξεκινήστε εδώ',
+	startHereSubtitle: 'Τρεις ιδέες πάνω στις οποίες στηρίζονται όλα τα υπόλοιπα.',
+	contentsMetaDescription: (bookTitle) => `Κάθε θέμα του «${bookTitle}», με σειρά ανάγνωσης.`,
+	topicsMetaDescription: (bookTitle) => `Κάθε θέμα του «${bookTitle}», σε αλφαβητική σειρά.`,
+	topicsIntroPrefix: (count) => `Και τα ${count} θέματα σε αλφαβητική σειρά. Για τη σειρά ανάγνωσης, δείτε τα:`,
+	contentsLinkText: 'περιεχόμενα',
+	jumpToLetter: 'Μετάβαση στο γράμμα',
+	searchMetaDescription: (bookTitle) => `Αναζητήστε σε κάθε θέμα του «${bookTitle}».`,
+	searchIntro: (count) =>
+		`Αναζητήστε και στα ${count} θέματα βάσει τίτλου, μέρους, περίληψης και επικεφαλίδων ενοτήτων. Όλα εκτελούνται στο πρόγραμμα περιήγησής σας — τίποτα από όσα πληκτρολογείτε δεν φεύγει από αυτή τη σελίδα.`,
+	searchInputLabel: 'Αναζήτηση θεμάτων',
+	searchPlaceholder: 'SROI, προεξόφληση, κόστος ανά αποτέλεσμα…',
+	searchHintEmptyHtml: 'Πληκτρολογήστε για αναζήτηση. Δοκιμάστε <em>SROI</em>, <em>νεκρό βάρος</em> ή <em>αξία για τα χρήματα</em>.',
+	noResultsPrefix: 'Κανένα θέμα δεν ταιριάζει με: ',
+	noResultsMiddle: '. Δοκιμάστε έναν ευρύτερο όρο ή περιηγηθείτε στα: ',
+	resultsCountSingular: 'θέμα',
+	resultsCountPlural: 'θέματα',
+	topicPosition: (index, total) => `Θέμα ${index} από ${total}`,
+	onThisPage: 'Σε αυτή τη σελίδα',
+	paginationLabel: 'Βιβλίο',
+	paginationPrevious: 'Προηγούμενο',
+	paginationNext: 'Επόμενο'
+};
+
 const TRANSLATIONS = {
 	'vi-001': vi,
 	'da-001': da,
@@ -1319,6 +1367,7 @@ const TRANSLATIONS = {
 	'cs-001': cs,
 	'ro-001': ro,
 	'hu-001': hu,
+	'el-001': el,
 	'de-de': de,
 	'de-001': de,
 	'ja-jp': ja,

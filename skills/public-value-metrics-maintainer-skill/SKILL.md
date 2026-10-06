@@ -6,7 +6,7 @@ description: Maintain this repository — add or edit a topic file under locales
 # Maintaining public-value-metrics
 
 This repo's reference docs live under `locales/<locale>/<topics dir>/<slug>/`, one directory per
-topic, for each of 46 locales (the list is in `README.md`'s "Locales" section; `spec/locale/index.md`
+topic, for each of 47 locales (the list is in `README.md`'s "Locales" section; `spec/locale/index.md`
 records the decisions behind it):
 
 - `en-gb-oxendict` — the canonical/default locale that `README.md` and the skills link into.
@@ -34,7 +34,7 @@ and each slug (see "Slugs can differ by locale"). Every topic directory contains
 
 Consistency is convention-based plus two checks: `sh bin/test` (structure and peer-id counts) and the
 site build (`public-value-metrics.github.io`, `pnpm run build`, which also fails on broken
-cross-locale links). Follow the existing pattern precisely across all 46 locales, not just one.
+cross-locale links). Follow the existing pattern precisely across all 47 locales, not just one.
 When translating a whole locale, translate every topic yourself, one after another — never with
 subagents.
 

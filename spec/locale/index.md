@@ -3,7 +3,7 @@
 Status of `spec/locales-for-global-sharing-with-svelte/` for this repo, updated when that spec is
 implemented or re-verified here.
 
-## Locales (46)
+## Locales (47)
 
 The canonical locale is `en-gb-oxendict`. Derived English locales: `en-gb`, `en-001`, `en-us`
 (`bin/derive-locales`). Every other locale is an AI translation (not yet reviewed by a fluent
