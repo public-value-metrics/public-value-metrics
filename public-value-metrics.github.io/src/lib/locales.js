@@ -83,3 +83,15 @@ export function matchLocale(preferred, available) {
 	}
 	return null;
 }
+
+/**
+ * The URL segment to use when auto-redirecting to `code`. A "World" locale
+ * (`en-001`) is reached through its bare-language alias (`/en/`, which the
+ * site redirects to `/en-001/`) so that a browser asking for a language the
+ * book has no exact locale for (`en-AU`) lands on the language's superset
+ * route, not on a regional edition. Every other locale uses its own code.
+ */
+export function redirectSegment(code, available) {
+	const m = /^([a-z]{2,3})-001$/.exec(code);
+	return m && !available.includes(m[1]) ? m[1] : code;
+}
