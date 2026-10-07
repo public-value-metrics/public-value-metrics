@@ -28,10 +28,28 @@ runs of non-letter/mark/digit characters with a hyphen, keep native script. Rela
 across locales. The site's sync step maps each translated topics directory back to `topics/` so
 routes stay `/<locale>/topics/<slug>/`.
 
+## Routes
+
+- A locale is served at exactly one URL prefix, its own directory name: `/<language>-<region>/`
+  (`/cy-gb/`, `/en-001/`). There are no bare-language aliases: `/en/` is a 404, not a redirect.
+  Topic pages are `/<locale>/topics/<slug>/`; the locale also has `contents/`, `topics/` and
+  `search/`.
+- The root `/` redirects, once, on a first visit, to the locale that best matches the browser's
+  language (`navigator.language`, then `navigator.languages`). Tags are normalised
+  (`cy_GB` = `cy-GB` = `cy-gb`). The first of these that exists wins: the exact locale (`en-US` →
+  `/en-us/`); the language's international locale (`en-AU` → `/en-001/`, `de-AT` → `/de-001/`); any
+  other locale in that language. With no match the visitor stays on the default locale
+  (`en-gb-oxendict`). A language never redirects to a bare-language path.
+- A locale the visitor already chose (stored by the locale picker) takes precedence over the browser
+  language, and a locale named in the URL takes precedence over both.
+- The locale picker follows the URL: opening `/de-001/…` from a link shows German whatever locale
+  was stored. The address bar is the source of truth.
+- Implemented in `src/lib/locales.js` `matchLocale()` and the root `src/routes/+layout.svelte`.
+
 ## What this pass did
 
 1. **Verified structure** for every locale: `bin/test` passes (every topic has `index.md`,
-   `.locale-peer-id`, and a `README.md` symlink; peer-id counts match across all 17 locales), and a
+   `.locale-peer-id`, and a `README.md` symlink; peer-id counts match across all locales), and a
    full cross-locale link scan found zero broken `../<slug>/` references.
 
 2. **Fixed dialect-guidance gaps** in `bin/derive-locales`'s `en-gb-oxendict` → `en-us` transform
@@ -65,10 +83,9 @@ routes stay `/<locale>/topics/<slug>/`.
   site already implements the described fixes (dynamic locale discovery, `i18n.js` UI-chrome
   translation, per-locale `+layout.server.js` title override, intro-block link extraction, `[^/]+`
   slug regexes) — built before this spec file arrived here, independently converging on the same
-  fixes it describes. `zh-cn` has not yet been added to that site's `src/lib/locales.js`
-  `LOCALE_LABELS` table or synced into its `content/`; do that (`pnpm run sync:content` picks up
-  the new locale automatically once `LOCALE_LABELS` has an entry, else it falls back to the raw
-  code) before the next site rebuild/deploy.
+  fixes it describes. Every locale, `zh-cn` included, has a `LOCALE_LABELS` entry in that site's
+  `src/lib/locales.js`, a UI-strings block in `src/lib/i18n.js` and vendored content (`node
+  bin/sync-content.mjs`); see `AGENTS/locales.md` for the checklist when adding one.
 - `cy-gb`/`cy-001` and `zh-001` were not removed even though they're outside `locales.tsv`'s exact
   15-locale list — pruning completed translations wasn't asked for, and the spec doesn't state
   the list is exhaustive/exclusive for every repo it was pushed to (the same `locales.tsv` is

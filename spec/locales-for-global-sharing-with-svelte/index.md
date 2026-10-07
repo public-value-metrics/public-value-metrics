@@ -61,6 +61,13 @@ Example: `es-001` `año-de-vida-ajustado-por-calidad`, `ur-001` `صحت-ایڈج
 
 Nothing in the site assumes slugs match across locales.
 
+## Routes and browser language
+
+- Each locale is served only at `/<code>/`; do not add bare-language alias routes (`/en/`).
+- Visiting `/` for the first time redirects to the locale matching `navigator.language`: exact
+  match, else the language's `<language>-001` locale, else the default. A stored choice or a locale
+  in the URL wins. Details and status: `spec/locale/index.md`.
+
 ## Locale picker (labels + ordering)
 
 - Labels live in `locales.js`'s `LOCALE_LABELS`, one entry per code, in that
