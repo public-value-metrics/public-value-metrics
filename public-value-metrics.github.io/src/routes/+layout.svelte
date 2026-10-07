@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { Footer, Header, SkipLink } from '@lilydesignsystem/svelte-headless';
 	import PickerBar from '@lilydesignsystem/svelte-picker-bar';
-	import { DEFAULT_LOCALE, localeLabel, matchLocale, redirectSegment } from '#lib/locales.js';
+	import { DEFAULT_LOCALE, localeLabel, matchLocale } from '#lib/locales.js';
 	import { ui } from '#lib/i18n.js';
 
 	let { data, children } = $props();
@@ -28,16 +28,6 @@
 	// if the book has it (`cy_GB` → `cy-gb`), else the default. On "/" the
 	// picker navigates to this locale, which is how a first visit is redirected.
 	// Prerendering has no `navigator`, so there it is always the default.
-	// Read before the picker mounts: it writes the locale to storage as soon
-	// as it applies one, so by the time onChange fires this would always be set.
-	const hadStoredLocale = (() => {
-		try {
-			return typeof localStorage !== 'undefined' && !!localStorage.getItem('public-value-metrics.locale');
-		} catch {
-			return false;
-		}
-	})();
-
 	const fallbackLocale =
 		(typeof navigator !== 'undefined' &&
 			matchLocale([navigator.language, ...(navigator.languages ?? [])], locales)) ||
@@ -128,10 +118,7 @@
 		// A search (/?<target>) is on the root page: the picker's automatic
 		// restore of the stored locale must not navigate away and drop it.
 		if (page.url.pathname === '/' && page.url.search) return;
-		// An automatic, language-based redirect (no stored choice) goes through
-		// the bare-language superset route: en-AU -> /en/, not /en-001/.
-		const automatic = next === fallbackLocale && !hadStoredLocale;
-		goto(resolve(`${automatic ? redirectSegment(next, locales) : next}/`), { refreshAll: true });
+		goto(resolve(`${next}/`), { refreshAll: true });
 	}
 </script>
 
