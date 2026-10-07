@@ -14,6 +14,8 @@ upstream baseline (all present).
 | Independent translations | the other `xx-001` and country locales | translated by hand, serially |
 | Content-identical country/World pairs | e.g. `de-de`/`de-001`, `ja-jp`/`ja-001` | identical text and identical paths |
 
+- Directory names: every directory under `locales/` is `<language>-<region>` (`cy-gb`, `en-001`); never a bare language such as `locales/en/`. See `spec/locale/index.md`.
+
 ## Path convention
 
 - English locales: `locales/<code>/topics/<english-slug>/` (`en-gb`/`en-001` spell `-ise` slugs: `benefits-realisation`).

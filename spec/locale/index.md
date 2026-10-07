@@ -10,6 +10,14 @@ The canonical locale is `en-gb-oxendict`. Derived English locales: `en-gb`, `en-
 speaker); the full list with names is the "Locales" section of `README.md`, and the 15 locales of
 `spec/locales-for-global-sharing-with-svelte/locales.tsv` are all present.
 
+## Locale directory names
+
+Every directory under `locales/` is named `<language>-<region>`: a lower-case ISO 639 language code,
+a hyphen, then a lower-case region code (`cy-gb`, `de-de`) or the UN M.49 code `001` for the
+international "World" edition of a language (`en-001`, `fi-001`). There are no bare language
+directories such as `locales/en/`. The one canonical locale, `en-gb-oxendict`, adds an
+orthography variant after the region and is the only name with a third part.
+
 ## Path convention
 
 English locales use `locales/<code>/topics/<english-slug>/`. Every other locale translates **both**
