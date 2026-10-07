@@ -70,8 +70,7 @@ resolves (a script that walks `locales/**/index.md` links works well).
   topics directory back to `topics/` in `content/`, so routes stay locale-agnostic; slugs are native-script
   (percent-encoded in URLs).
 - UI strings live in `src/lib/i18n.js` (one block per locale; do not add `contentsIntro` or
-  `topicsCountSubtitle`, which were removed). Labels live in `src/lib/locales.js`. Two-letter aliases
-  (`/pl` -> `/pl-001`) are automatic.
+  `topicsCountSubtitle`, which were removed). Labels live in `src/lib/locales.js`.
 - The contents page is a plain nested list per `spec/contents-for-global-sharing-with-svelte/index.md`
   (parts "N Title", topics "N.M Title"; no tiles, tables, columns, flexbox or grid).
 - `pnpm` 11 holds back packages released in the last day; leave that gate on. `typescript` stays on 6.x

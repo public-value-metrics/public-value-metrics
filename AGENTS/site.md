@@ -14,7 +14,7 @@ what an agent needs.
 - The README's `## Heading` parts and `- [Title](locales/en-gb-oxendict/topics/<slug>/) — blurb` lines define
   the table of contents, reading order, sidebar and previous/next. Locale indexes mirror it line for line.
 - Cross-locale links use the peer-id (`content.js` `peers()`), so slugs may differ freely.
-- Two-letter aliases (`/cs` → `/cs-001`) come from `localeAliases()`; nothing to register.
+- There are no two-letter alias routes: a locale is served only at its own `<language>-<region>` path.
 
 ## Build outputs
 
