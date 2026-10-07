@@ -931,6 +931,45 @@ pre {
 }
 
 @media (max-width: 40rem) {
+	/* Search on a phone: the panel opens over the row of picker buttons, the
+	 * full width of that row, so it stays inside the header and covers neither
+	 * the nav links nor the page. The other pickers are hidden (not removed,
+	 * so the row keeps its height) only while the panel is open. The theme
+	 * positions the panel inside :where(), which has no specificity, so these
+	 * plain class selectors win. Logical properties keep it right for RTL. */
+	.site-controls {
+		position: relative;
+	}
+
+	.site-controls .search-picker {
+		position: static;
+	}
+
+	.site-controls .search-picker-panel {
+		inset-inline: 0;
+		top: 0;
+		height: 100%;
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		background-color: var(--lily-surface);
+	}
+
+	.site-controls .search-picker-form {
+		height: 100%;
+	}
+
+	.site-controls .search-picker-input {
+		flex: 1;
+		width: auto;
+		min-width: 0;
+	}
+
+	.site-controls:has(.search-picker-panel:not([hidden])) > :not(.search-picker) {
+		visibility: hidden;
+	}
+
 	.site-body {
 		padding: var(--lily-space-md);
 	}
