@@ -36,3 +36,10 @@ what an agent needs.
 ## Locale picker and the URL
 
 The URL is the source of truth for the locale. The Lily locale picker fires `onChange` both when a reader picks a language and when it merely follows the URL (a link, Back/Forward, a direct load); `navigateToLocale` in `src/routes/+layout.svelte` ignores a change whose code already matches the address bar's first path segment, so following the URL never navigates away. A saved locale only applies on locale-less pages (`/`, `/about/`).
+
+## Header picker bar
+
+`PickerBar` (`@lilydesignsystem/svelte-picker-bar` 0.3+) renders link, search, theme, locale, text-size and share pickers. Keep the sub-pickers on the versions the bar itself depends on (do not pin them in `package.json`; a pin to an older release silently drops features such as tooltips).
+
+- Project links (the home-icon picker, leftmost) are the `projectLinks` array in `src/routes/+layout.svelte`: the GitHub, Codeberg and GitLab repositories, `llms.txt`, the Green Book and the Lily Design System. Labels are proper names, so only the picker's own name (`pickerLinks` in `src/lib/i18n.js`) is translated.
+- The theme anchors and flips popups itself; do not override their `position` or insets in `static/assets/style.css`. The one exception is the search panel below 40rem, which opts out (`position-area: none`) to open over the button row.
