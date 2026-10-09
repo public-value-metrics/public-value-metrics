@@ -71,12 +71,17 @@ test_links() {
     node "$top/bin/check-links" || err "broken links (see above)"
 }
 
+test_locale_sitemaps() {
+    python3 "$top/bin/build-locale-sitemaps" --check || err "a locale sitemap.xml is missing or stale: run bin/build-locale-sitemaps"
+}
+
 main() {
     test_locales
     test_locales_subdirectories
     test_locale_peer_id_counts_match
     test_locale_index_files
     test_links
+    test_locale_sitemaps
 }
 
 main

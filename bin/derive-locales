@@ -124,3 +124,6 @@ for dir in $(find locales -type d -mindepth 3); do
   fi
 done
 echo "README.md symlinks ensured."
+
+# Every locale carries a generated sitemap.xml; copies above would carry their source locale's URLs.
+python3 "$top/bin/build-locale-sitemaps"
