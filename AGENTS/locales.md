@@ -1,6 +1,6 @@
 # Locales: structure, paths and adding one
 
-48 locales live under `locales/`. The list with names is the "Locales" section of `README.md`;
+52 locales live under `locales/`. The list with names is the "Locales" section of `README.md`;
 `spec/locale/index.md` records decisions; `spec/locales-for-global-sharing-with-svelte/locales.tsv` is the
 upstream baseline (all present).
 
@@ -21,13 +21,13 @@ upstream baseline (all present).
 - English locales: `locales/<code>/topics/<english-slug>/` (`en-gb`/`en-001` spell `-ise` slugs: `benefits-realisation`).
 - Every other locale: `locales/<code>/<translated topics word>/<translated slug>/`, e.g.
   `locales/cs-001/témata/veřejná-hodnota/`, `locales/ja-jp/トピック/…`, `locales/ro-001/subiecte/…`.
-- Slug derivation (implemented by `bin/translate-paths`, which produced all 44 non-English locales): take the translated H1,
+- Slug derivation (implemented by `bin/translate-paths`, which produced all 48 non-English locales): take the translated H1,
   drop parentheticals, strip quotation marks, lower-case (Turkish: `İ→i`, `I→ı`), replace every run of
   characters that are not letters, combining marks or digits with `-`, trim hyphens, NFC-normalise.
   Native script is kept; there is no transliteration.
 - Topics word per language: ar المواضيع, bn বিষয়সমূহ, cs témata, cy pynciau, da emner, de themen, es temas,
-  et teemad, fr sujets, hi विषय, id topik, it argomenti, ja トピック, ko 주제, nl onderwerpen, pl tematy,
-  pt tópicos, ro subiecte, ru темы, sv ämnen, tr konular, uk теми, ur موضوعات, vi chủ-đề, zh 主题.
+  et teemad, fr sujets, hi विषय, id topik, is efni, it argomenti, ja トピック, ko 주제, nl onderwerpen, pl tematy,
+  pt tópicos, ro subiecte, ru темы, sv ämnen, sw mada, th หัวข้อ, tr konular, uk теми, ur موضوعات, vi chủ-đề, zh 主题.
   Locales of the same language share it.
 - Links: inside a topic, `../<that locale's slug>/`. In a locale's `index.md`, the intro links to
   `locales/<code>/<topics word>/<slug>/` and every contents entry links to
