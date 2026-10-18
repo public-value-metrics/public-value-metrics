@@ -1,6 +1,6 @@
 # Locales: structure, paths and adding one
 
-52 locales live under `locales/`. The list with names is the "Locales" section of `README.md`;
+53 locales live under `locales/`. The list with names is the "Locales" section of `README.md`;
 `spec/locale/index.md` records decisions; `spec/locales-for-global-sharing-with-svelte/locales.tsv` is the
 upstream baseline (all present).
 
