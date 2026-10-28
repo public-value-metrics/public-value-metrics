@@ -5,11 +5,11 @@
 
 /** Human-readable name for each locale code, in its own language where possible. */
 export const LOCALE_LABELS = {
-	'en-gb-oxendict': 'English - Great Britain, Oxford Spelling',
+	'en-gb-oxendict': 'English - Great Britain - Oxford',
 	'en-001': 'English',
 	'en-us': 'English - United States',
 	'en-gb': 'English - Great Britain',
-	'cy-gb': 'Cymraeg - Y Deyrnas Unedig',
+	'cy-gb': 'Cymraeg - Prydain Fawr',
 	'cy-001': 'Cymraeg',
 	'zh-001': '中文',
 	'zh-cn': '中文 - 中国大陆',

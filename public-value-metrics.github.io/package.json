@@ -10,7 +10,7 @@
     "sync": "node bin/sync-content.mjs",
     "sync:content": "node bin/sync-content.mjs",
     "dev": "vite dev",
-    "build": "vite build && node scripts/build-search-index.mjs build && node scripts/build-llms.mjs build && node scripts/build-sitemap.mjs build",
+    "build": "vite build && node scripts/build-search-index.mjs build && node scripts/build-llms.mjs build && node scripts/build-sitemap.mjs build && node scripts/build-locale-sitemaps.mjs build",
     "preview": "vite preview",
     "postinstall": "node bin/sync-themes.mjs"
   },
