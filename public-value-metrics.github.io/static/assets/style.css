@@ -239,6 +239,7 @@ pre {
 }
 
 .search-picker-panel[hidden],
+.link-picker-tooltip[hidden],
 .search-picker-tooltip[hidden],
 .theme-picker-tooltip[hidden],
 .locale-picker-tooltip[hidden],
@@ -278,8 +279,10 @@ pre {
 	background-color: var(--lily-surface-alt);
 }
 
-/* Hover/focus tooltip, the same on all five pickers: floats under the
- * button's end edge without taking part in the bar's layout. */
+/* Hover/focus tooltip, the same on all six pickers: floats under the
+ * button's end edge without taking part in the bar's layout. It is as wide
+ * as its label, not as wide as the (icon-sized) button it hangs from. */
+.link-picker-tooltip,
 .search-picker-tooltip,
 .theme-picker-tooltip,
 .locale-picker-tooltip,
@@ -294,6 +297,8 @@ pre {
 	background-color: var(--lily-text);
 	color: var(--lily-surface);
 	font-size: 0.8em;
+	width: max-content;
+	max-width: none;
 	white-space: nowrap;
 	pointer-events: none;
 }

@@ -3,6 +3,13 @@
 Guidance for AI coding agents working in this repository. `CLAUDE.md` points here. Keep this file
 under 40 KB; the details live in `spec/`, `skills/`, and `README.md`, and this file only says where.
 
+## Specification Driven Development
+
+**The `spec/` directory is the source of truth.** 
+- Before doing anything read all files inside the `spec/` directory using your file-reading tools.
+- Treat all files inside `spec/` as strict requirements. Where any file disagrees with the spec, the spec wins: fix the file, or change the spec on purpose and bring the other files into line in the same commit. 
+- Do not improvise structure, style, or citation practice.
+
 ## What this repo is
 
 *Public Value Metrics*: 64 topics on public-value maths for software engineers, published in 53

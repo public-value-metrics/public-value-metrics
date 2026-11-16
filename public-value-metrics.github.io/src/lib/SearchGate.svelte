@@ -1,12 +1,10 @@
 <script>
 	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
 	import { targetFromSearch, search } from '#lib/search.js';
 
 	let { children } = $props();
 
 	let target = $state('');
-	let input = $state('');
 	let results = $state(null);
 	let failed = $state(false);
 	/** @type {Promise<any[]> | null} */
@@ -17,7 +15,6 @@
 	// Client-only: the home page is prerendered, so the query is read here.
 	$effect(() => {
 		target = onHome ? targetFromSearch(page.url.search) : '';
-		input = target;
 	});
 
 	$effect(() => {
@@ -42,20 +39,7 @@
 		);
 	});
 
-	function submit(event) {
-		event.preventDefault();
-		const q = input.trim();
-		goto(q ? `/?${encodeURIComponent(q).replace(/%20/g, '+')}` : '/');
-	}
 </script>
-
-{#if onHome}
-	<form class="site-search" role="search" onsubmit={submit}>
-		<label for="site-search-input">Search</label>
-		<input id="site-search-input" type="search" bind:value={input} autocomplete="off" />
-		<button type="submit">Search</button>
-	</form>
-{/if}
 
 {#if target}
 	<section class="site-search-results" aria-live="polite" aria-label="Search results">
@@ -84,28 +68,6 @@
 {/if}
 
 <style>
-	.site-search {
-		display: flex;
-		gap: 0.5rem;
-		align-items: center;
-		flex-wrap: wrap;
-		margin: 0 0 1.5rem;
-	}
-	.site-search input {
-		flex: 1 1 14rem;
-		min-width: 0;
-		padding: 0.4rem 0.6rem;
-		font: inherit;
-		color: inherit;
-		background: transparent;
-		border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
-		border-radius: 4px;
-	}
-	.site-search button {
-		padding: 0.4rem 0.9rem;
-		font: inherit;
-		cursor: pointer;
-	}
 	.site-search-results ol {
 		padding-left: 1.25rem;
 	}

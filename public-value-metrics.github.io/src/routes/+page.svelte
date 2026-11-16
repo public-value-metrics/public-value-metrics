@@ -1,36 +1,24 @@
 <script>
 	import { resolve } from '$app/paths';
-	import { SectionList, SectionListItem } from '@lilydesignsystem/svelte-headless';
 
 	let { data } = $props();
+	const summary =
+		'Public value is the worth that governments and social sector organizations create for the people they serve, judged by legitimacy, mission, and operational capacity as well as by cost. It matters because public money is limited, every choice has an opportunity cost, and citizens deserve evidence that spending improves their lives. This guide provides topics on public value maths, examples, and reasoning, each with a definition, a method, a worked example, pitfalls, and sources.';
+	const worldLocales = $derived(data.locales.filter((locale) => locale.code.endsWith('-001')));
 </script>
 
 <svelte:head>
 	<title>{data.title}</title>
-	<meta name="description" content={data.summary} />
+	<meta name="description" content={summary} />
 </svelte:head>
 
 <div class="page page-home">
 	<header class="book-hero">
 		<h1>{data.title}</h1>
-		<p class="book-hero-summary">{data.summary}</p>
+		<p class="book-hero-summary">{summary}</p>
+		<p class="book-hero-translations">
+			Translations:
+			{#each worldLocales as locale, i (locale.code)}<a href={resolve(`${locale.code}/`)}>{locale.label}</a>{i < worldLocales.length - 1 ? ', ' : ''}{/each}
+		</p>
 	</header>
-
-	<section class="locale-picker" aria-labelledby="choose-locale">
-		<h2 id="choose-locale">Choose a language</h2>
-		<p>The same {data.topicCount} topics, translated. English defaults to Oxford spelling; the other English variants and every other language are AI-translated and have not been reviewed by a fluent speaker.</p>
-		<SectionList class="locale-list">
-			{#each data.locales as locale (locale.code)}
-				<SectionListItem class="locale-item">
-					<a
-						class="locale-link"
-						href={resolve(`${locale.code}/`)}
-					>
-						{locale.label} 
-						{#if locale.isDefault}<span class="locale-default-tag">default</span>{/if}
-					</a>
-				</SectionListItem>
-			{/each}
-		</SectionList>
-	</section>
 </div>
