@@ -9,11 +9,19 @@ export const HERO = {
   "tagline": "رياضيات القيمة العامة وأمثلتها ومنطقها لمهندسي البرمجيات.",
   "translations": "الترجمات: "
  },
+ "ar-dz": {
+  "tagline": "رياضيات القيمة العامة وأمثلتها ومنطقها لمهندسي البرمجيات.",
+  "translations": "الترجمات: "
+ },
  "bn-001": {
   "tagline": "সফটওয়্যার প্রকৌশলীদের জন্য জনমূল্যের গণিত, উদাহরণ ও যুক্তি।",
   "translations": "অনুবাদ: "
  },
  "bn-bd": {
+  "tagline": "সফটওয়্যার প্রকৌশলীদের জন্য জনমূল্যের গণিত, উদাহরণ ও যুক্তি।",
+  "translations": "অনুবাদ: "
+ },
+ "bn-in": {
   "tagline": "সফটওয়্যার প্রকৌশলীদের জন্য জনমূল্যের গণিত, উদাহরণ ও যুক্তি।",
   "translations": "অনুবাদ: "
  },
@@ -121,6 +129,10 @@ export const HERO = {
   "tagline": "Matematika nilai publik, contoh, dan penalaran bagi insinyur perangkat lunak.",
   "translations": "Terjemahan: "
  },
+ "id-my": {
+  "tagline": "Matematika nilai publik, contoh, dan penalaran bagi insinyur perangkat lunak.",
+  "translations": "Terjemahan: "
+ },
  "is-001": {
   "tagline": "Stærðfræði almannagildis, dæmi og rökstuðningur fyrir hugbúnaðarverkfræðinga.",
   "translations": "Þýðingar: "
@@ -186,6 +198,10 @@ export const HERO = {
   "translations": "Переводы: "
  },
  "ru-ru": {
+  "tagline": "Математика общественной ценности, примеры и рассуждения для программных инженеров.",
+  "translations": "Переводы: "
+ },
+ "ru-by": {
   "tagline": "Математика общественной ценности, примеры и рассуждения для программных инженеров.",
   "translations": "Переводы: "
  },
@@ -259,8 +275,10 @@ export const HERO = {
 export const ENDONYMS = {
  "ar-001": "العربية",
  "ar-eg": "العربية (مصر)",
+ "ar-dz": "العربية - الجزائر",
  "bn-001": "বাংলা",
  "bn-bd": "বাংলা (বাংলাদেশ)",
+ "bn-in": "বাংলা - ভারত",
  "cs-001": "Čeština",
  "cy-001": "Cymraeg",
  "cy-gb": "Cymraeg (Prydain Fawr)",
@@ -287,6 +305,7 @@ export const ENDONYMS = {
  "hu-001": "Magyar",
  "id-001": "Bahasa Indonesia",
  "id-id": "Bahasa Indonesia (Indonesia)",
+ "id-my": "Bahasa Indonesia - Malaysia",
  "is-001": "Íslenska",
  "is-is": "Íslenska (Ísland)",
  "it-001": "Italiano",
@@ -304,6 +323,7 @@ export const ENDONYMS = {
  "ro-001": "Română",
  "ru-001": "Русский",
  "ru-ru": "Русский (Россия)",
+ "ru-by": "Русский - Беларусь",
  "sv-001": "Svenska",
  "sv-se": "Svenska (Sverige)",
  "sw-001": "Kiswahili",

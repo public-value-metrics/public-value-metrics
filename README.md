@@ -118,6 +118,7 @@ This book is maintained in fifty-six locales, tracked across directories with a 
 - `ja-jp` — 日本語 (Japan)
 - `ja-001` — 日本語 (World) — content-identical to `ja-jp`; this book has no Japan-specific subject matter
 - `ar-eg` — العربية (Egypt) — content-identical to `ar-001`; this book has no Egypt-specific subject matter
+- `ar-dz`, `ru-by`, `bn-in`, `id-my` — regional adaptations of `ar-001`, `ru-001`, `bn-001`, `id-001` (vocabulary only; same peer ids; AI-assisted, pending native review; `ru-by` has no differences yet)
 - `bn-bd` — বাংলা (Bangladesh) — content-identical to `bn-001`
 - `hi-in` — हिन्दी (India) — content-identical to `hi-001`
 - `es-es` — Español (Spain) — content-identical to `es-001`
