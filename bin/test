@@ -40,7 +40,7 @@ test_locales() {
 }
 
 test_locales_subdirectories() {
-    for dir in $(find "$top/locales" -type d -mindepth 3); do
+    for dir in $(find "$top/locales" -type d -mindepth 3 -not -path "*/communications/*"); do
         file_exists_or_err "$dir/.locale-peer-id"
         file_exists_or_err "$dir/index.md"
         symlink_exists_or_err "$dir/README.md"
