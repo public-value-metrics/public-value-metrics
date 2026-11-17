@@ -31,6 +31,7 @@ export const LOCALE_LABELS = {
 	'hi-in': 'हिन्दी - भारत',
 	'es-es': 'Español - España',
 	'es-mx': 'Español - México',
+	'fr-ca': 'Français - Canada',
 	'fr-fr': 'Français - France',
 	'ru-ru': 'Русский - Россия',
 	'pt-pt': 'Português - Portugal',

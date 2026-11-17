@@ -93,6 +93,10 @@ export const HERO = {
   "tagline": "Mathématiques, exemples et raisonnement de la valeur publique pour les ingénieurs logiciels.",
   "translations": "Traductions: "
  },
+ "fr-ca": {
+  "tagline": "Mathématiques, exemples et raisonnement de la valeur publique pour les ingénieurs logiciels.",
+  "translations": "Traductions: "
+ },
  "fr-fr": {
   "tagline": "Mathématiques, exemples et raisonnement de la valeur publique pour les ingénieurs logiciels.",
   "translations": "Traductions: "
@@ -272,6 +276,7 @@ export const ENDONYMS = {
  "fi-001": "Suomi",
  "fi-fi": "Suomi (Suomi)",
  "fr-001": "Français",
+ "fr-ca": "Français (Canada)",
  "fr-fr": "Français (France)",
  "hi-001": "हिन्दी",
  "hi-in": "हिन्दी (भारत)",
