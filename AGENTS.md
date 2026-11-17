@@ -12,14 +12,14 @@ under 40 KB; the details live in `spec/`, `skills/`, and `README.md`, and this f
 
 ## What this repo is
 
-*Public Value Metrics*: 64 topics on public-value maths for software engineers, published in 56
+*Public Value Metrics*: 64 topics on public-value maths for software engineers, published in 67
 locales, plus the SvelteKit site that publishes them.
 
 ```
 README.md                         categorized index of the 64 topics (links into en-gb-oxendict); also the site's table of contents
 locales/<locale>/                 one directory per locale: index.md (Contents page) + the topics directory
 locales/<locale>/<topics-dir>/<slug>/{index.md, README.md -> index.md, .locale-peer-id}
-bin/                              test, derive-locales, locale-peer-id, grep-locale-peer-id, slug-case, markdown-read-to-headline
+bin/                              test, check-links, derive-locales, translate-paths, build-locale-sitemaps, locale-peer-id, grep-locale-peer-id, slug-case, markdown-read-to-headline
 spec/                             specifications: single source of truth for behaviour (read before changing behaviour)
 skills/                           agent skills: public-value-metrics-skill (use the book), -maintainer-skill (edit it)
 public-value-metrics.github.io/   SvelteKit + adapter-static + Lily Design System site, deployed by GitHub Pages
