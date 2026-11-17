@@ -69,6 +69,10 @@ export const HERO = {
   "tagline": "Matemáticas, ejemplos y razonamiento del valor público para ingenieros de software.",
   "translations": "Traducciones: "
  },
+ "es-mx": {
+  "tagline": "Matemáticas, ejemplos y razonamiento del valor público para ingenieros de software.",
+  "translations": "Traducciones: "
+ },
  "et-001": {
   "tagline": "Avaliku väärtuse matemaatika, näited ja arutlused tarkvarainseneridele.",
   "translations": "Tõlked: "
@@ -262,6 +266,7 @@ export const ENDONYMS = {
  "en-us": "English (United States)",
  "es-001": "Español",
  "es-es": "Español (España)",
+ "es-mx": "Español (México)",
  "et-001": "Eesti",
  "et-et": "Eesti (Eesti)",
  "fi-001": "Suomi",

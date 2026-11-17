@@ -94,7 +94,7 @@ New here? Start with [public value](locales/en-gb-oxendict/topics/public-value/)
 
 ## Locales
 
-This book is maintained in fifty-three locales, tracked across directories with a [`.locale-peer-id`](https://github.com/SixArm/locale-help) file so translations of the same topic can be found regardless of slug spelling. The English locales (`en-gb-oxendict`, `en-gb`, `en-001`, `en-us`) use the `topics/` directory and English slugs; every other locale translates the `topics/` directory name and each topic's slug into its own language and script (for example `locales/cs-001/témata/veřejná-hodnota/`):
+This book is maintained in fifty-four locales, tracked across directories with a [`.locale-peer-id`](https://github.com/SixArm/locale-help) file so translations of the same topic can be found regardless of slug spelling. The English locales (`en-gb-oxendict`, `en-gb`, `en-001`, `en-us`) use the `topics/` directory and English slugs; every other locale translates the `topics/` directory name and each topic's slug into its own language and script (for example `locales/cs-001/témata/veřejná-hodnota/`):
 
 - `en-gb-oxendict` — English (Great Britain, Oxford spelling) — the canonical locale this README links into
 - `en-001` — English (World)
@@ -121,6 +121,7 @@ This book is maintained in fifty-three locales, tracked across directories with 
 - `bn-bd` — বাংলা (Bangladesh) — content-identical to `bn-001`
 - `hi-in` — हिन्दी (India) — content-identical to `hi-001`
 - `es-es` — Español (Spain) — content-identical to `es-001`
+- `es-mx` — Español (Mexico) — content-identical to `es-001`
 - `fr-fr` — Français (France) — content-identical to `fr-001`
 - `ru-ru` — Русский (Russia) — content-identical to `ru-001`
 - `pt-pt` — Português (Portugal) — content-identical to `pt-001`

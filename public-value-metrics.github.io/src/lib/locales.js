@@ -30,6 +30,7 @@ export const LOCALE_LABELS = {
 	'bn-bd': 'বাংলা - বাংলাদেশ',
 	'hi-in': 'हिन्दी - भारत',
 	'es-es': 'Español - España',
+	'es-mx': 'Español - México',
 	'fr-fr': 'Français - France',
 	'ru-ru': 'Русский - Россия',
 	'pt-pt': 'Português - Portugal',
