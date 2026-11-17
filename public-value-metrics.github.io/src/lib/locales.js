@@ -34,6 +34,7 @@ export const LOCALE_LABELS = {
 	'fr-ca': 'Français - Canada',
 	'fr-fr': 'Français - France',
 	'ru-ru': 'Русский - Россия',
+	'pt-br': 'Português - Brasil',
 	'pt-pt': 'Português - Portugal',
 	'ur-pk': 'اردو - پاکستان',
 	'id-id': 'Bahasa Indonesia - Indonesia',

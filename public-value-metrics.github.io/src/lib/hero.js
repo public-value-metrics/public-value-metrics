@@ -169,6 +169,10 @@ export const HERO = {
   "tagline": "Matemática, exemplos e raciocínio sobre valor público para engenheiros de software.",
   "translations": "Traduções: "
  },
+ "pt-br": {
+  "tagline": "Matemática, exemplos e raciocínio sobre valor público para engenheiros de software.",
+  "translations": "Traduções: "
+ },
  "pt-pt": {
   "tagline": "Matemática, exemplos e raciocínio sobre valor público para engenheiros de software.",
   "translations": "Traduções: "
@@ -295,6 +299,7 @@ export const ENDONYMS = {
  "nl-nl": "Nederlands (Nederland)",
  "pl-001": "Polski",
  "pt-001": "Português",
+ "pt-br": "Português (Brasil)",
  "pt-pt": "Português (Portugal)",
  "ro-001": "Română",
  "ru-001": "Русский",
