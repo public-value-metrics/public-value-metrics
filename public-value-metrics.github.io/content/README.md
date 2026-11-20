@@ -94,7 +94,7 @@ New here? Start with [public value](locales/en-gb-oxendict/topics/public-value/)
 
 ## Locales
 
-This book is maintained in sixty-seven locales, tracked across directories with a [`.locale-peer-id`](https://github.com/SixArm/locale-help) file so translations of the same topic can be found regardless of slug spelling. The English locales (`en-gb-oxendict`, `en-gb`, `en-001`, `en-us`) use the `topics/` directory and English slugs; every other locale translates the `topics/` directory name and each topic's slug into its own language and script (for example `locales/cs-001/témata/veřejná-hodnota/`):
+This book is maintained in 131 locales, tracked across directories with a [`.locale-peer-id`](https://github.com/SixArm/locale-help) file so translations of the same topic can be found regardless of slug spelling. The English locales (`en-gb-oxendict`, `en-gb`, `en-001`, `en-us`) use the `topics/` directory and English slugs; every other locale translates the `topics/` directory name and each topic's slug into its own language and script (for example `locales/cs-001/témata/veřejná-hodnota/`):
 
 - `en-gb-oxendict` — English (Great Britain, Oxford spelling) — the canonical locale this README links into
 - `en-001` — English (World)
@@ -160,6 +160,70 @@ This book is maintained in sixty-seven locales, tracked across directories with 
 - `th-001` — ไทย (World)
 - `th-th` — ไทย (ประเทศไทย) — content-identical to `th-001`; this book has no Thailand-specific subject matter
 - `zh-tw` — 中文 (Taiwan) — Traditional script, converted from `zh-001`
+- `bg-001` — Български (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `bg-bg` — Български (България) — regional adaptation of `bg-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `bh-001` — भोजपुरी (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `cs-cz` — Čeština (Česko) — regional adaptation of `cs-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `cy-ar` — Cymraeg (Ariannin) — sibling-copy draft of `cy-gb` with codes and URLs rewritten; AI-assisted, pending native review
+- `da-dk` — Dansk (Danmark) — regional adaptation of `da-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `de-at` — Deutsch (Österreich) — sibling-copy draft of `de-de` with codes and URLs rewritten; AI-assisted, pending native review
+- `el-cy` — Ελληνικά (Κύπρος) — regional adaptation of `el-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `el-gr` — Ελληνικά (Ελλάδα) — regional adaptation of `el-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `en-ie` — English (Ireland) — regional adaptation of `en-gb` (light regional edits; same peer ids); AI-assisted, pending native review
+- `et-ee` — Eesti (Eesti) — regional adaptation of `et-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `eu-001` — Euskara (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `eu-es` — Euskara (Espainia) — regional adaptation of `eu-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `fa-001` — فارسی (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `fr-be` — Français (Belgique) — regional adaptation of `fr-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `fr-lu` — Français (Luxembourg) — regional adaptation of `fr-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `ga-001` — Gaeilge (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `ga-ie` — Gaeilge (Éire) — regional adaptation of `ga-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `gd-001` — Gàidhlig (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `gd-gb` — Gàidhlig (An Rìoghachd Aonaichte) — regional adaptation of `gd-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `gu-001` — ગુજરાતી (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `ha-001` — Hausa (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `he-001` — עברית (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `hi-np` — हिन्दी (नेपाल) — sibling-copy draft of `hi-in` with codes and URLs rewritten; AI-assisted, pending native review
+- `hr-001` — Hrvatski (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `hr-hr` — Hrvatski (Hrvatska) — regional adaptation of `hr-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `hu-hu` — Magyar (Magyarország) — regional adaptation of `hu-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `jv-001` — Basa Jawa (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `km-001` — ភាសាខ្មែរ (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `km-kh` — ភាសាខ្មែរ (កម្ពុជា) — regional adaptation of `km-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `kn-001` — ಕನ್ನಡ (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `kw-001` — Kernewek (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `kw-gb` — Kernewek (Rywvaneth Unys) — regional adaptation of `kw-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `lb-001` — Lëtzebuergesch (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `lb-lu` — Lëtzebuergesch (Lëtzebuerg) — regional adaptation of `lb-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `lo-001` — ພາສາລາວ (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `lo-la` — ພາສາລາວ (ລາວ) — regional adaptation of `lo-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `lt-001` — Lietuvių (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `lt-lt` — Lietuvių (Lietuva) — regional adaptation of `lt-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `lv-001` — Latviešu (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `lv-lv` — Latviešu (Latvija) — regional adaptation of `lv-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `mr-001` — मराठी (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `ms-001` — Bahasa Melayu (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `mt-001` — Malti (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `mt-mt` — Malti (Malta) — regional adaptation of `mt-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `nb-001` — Norsk bokmål (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `nb-no` — Norsk bokmål (Norge) — regional adaptation of `nb-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `nl-be` — Nederlands (België) — regional adaptation of `nl-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `pa-001` — ਪੰਜਾਬੀ (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `pcm-001` — Naijá (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `pl-pl` — Polski (Polska) — regional adaptation of `pl-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `ro-ro` — Română (România) — regional adaptation of `ro-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `sco-001` — Scots (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `sco-gb` — Scots (Unitit Kinrick) — regional adaptation of `sco-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `sk-001` — Slovenčina (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `sk-sk` — Slovenčina (Slovensko) — regional adaptation of `sk-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `sl-001` — Slovenščina (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `sl-si` — Slovenščina (Slovenija) — regional adaptation of `sl-001` (light regional edits; same peer ids); AI-assisted, pending native review
+- `ta-001` — தமிழ் (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `te-001` — తెలుగు (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `tl-001` — Filipino (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `wuu-001` — 吴语 (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `yue-001` — yue-001 (World) — AI-translated from `en-gb-oxendict`, pending review by a fluent speaker
+- `zh-th` — 简体中文 (泰国) — sibling-copy draft of `zh-cn` with codes and URLs rewritten; AI-assisted, pending native review
 
 See [locale-help](https://github.com/SixArm/locale-help) for the conventions this repo follows: locale directory naming, slug format, and the `.locale-peer-id` cross-locale tracking file.
 

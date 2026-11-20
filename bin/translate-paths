@@ -26,7 +26,11 @@ const TOPICS = {
 	ar: 'المواضيع', bn: 'বিষয়সমূহ', cs: 'témata', cy: 'pynciau', da: 'emner', de: 'themen',
 	el: 'θέματα', es: 'temas', et: 'teemad', fr: 'sujets', hi: 'विषय', fi: 'aiheet', hu: 'témák', id: 'topik', it: 'argomenti',
 	ja: 'トピック', ko: '주제', nl: 'onderwerpen', pl: 'tematy', pt: 'tópicos', ro: 'subiecte', ru: 'темы',
-	is: 'efni', sv: 'ämnen', sw: 'mada', th: 'หัวข้อ', tr: 'konular', uk: 'теми', ur: 'موضوعات', vi: 'chủ-đề', zh: '主题'
+	is: 'efni', sv: 'ämnen', sw: 'mada', th: 'หัวข้อ', tr: 'konular', uk: 'теми', ur: 'موضوعات', vi: 'chủ-đề', zh: '主题',
+	bg: 'теми', bh: 'विषय', eu: 'gaiak', fa: 'موضوعات', ga: 'topaicí', gd: 'cuspairean', gu: 'વિષયો', ha: 'batutuwa',
+	he: 'נושאים', hr: 'teme', jv: 'topik', km: 'ប្រធានបទ', kn: 'ವಿಷಯಗಳು', kw: 'temow', lb: 'themen', lo: 'ຫົວຂໍ້',
+	lt: 'temos', lv: 'tēmas', mr: 'विषय', ms: 'topik', mt: 'temi', nb: 'emner', pa: 'ਵਿਸ਼ੇ', pcm: 'topics',
+	sco: 'topics', ta: 'தலைப்புகள்', te: 'అంశాలు', tl: 'mga-paksa', yue: '主題', sk: 'témy', sl: 'teme', wuu: '主题'
 };
 
 function slugify(title, lang) {
